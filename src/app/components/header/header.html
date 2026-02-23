@@ -1,0 +1,41 @@
+<header class="fixed top-4 inset-x-0 z-50 ">
+    <div class="mx-auto max-w-6xl px-6 ">
+        <!-- OUTER PILL -->
+        <div class="rounded-pill transition-all duration-300 will-change-transform overflow-hidden" [ngClass]="scrolled()
+    ? 'bg-surface/55 backdrop-blur-2xl shadow-[0_18px_50px_rgba(0,0,0,0.18)] scale-[0.985]'
+    : 'bg-surface/90 backdrop-blur-xl shadow-soft scale-[1]'
+  ">
+
+
+            <!-- INNER PILL: contenido -->
+            <div class="h-20 w-[96%] mx-auto flex items-center justify-between gap-4 rounded-pill px-10">
+                <!-- LOGO (NO uses h-40/w-40 para layout, se come el nav) -->
+                <a class="flex items-center shrink-0" routerLink="/" aria-label="Ir a Inicio">
+                    <img src="/images/logo.png" alt="Logo Dr. Jaime" class="h-16 w-auto max-w-[140px] object-contain" />
+                </a>
+
+                <!-- NAV (forzado visible para comprobar) -->
+                <nav class="flex flex-1 items-center justify-center gap-10 text-[18px] font-bold text-text/70">
+                    <a class="hover:text-text transition" routerLink="/">Inicio</a>
+                    <a class="hover:text-text transition" routerLink="/nosotros">Nosotros</a>
+                    <a class="hover:text-text transition" routerLink="/servicios">Servicios</a>
+                    <a class="hover:text-text transition" routerLink="/casos">Casos de Éxito</a>
+                    <a class="hover:text-text transition" routerLink="/pacientes">Pacientes</a>
+                    <a class="hover:text-text transition" routerLink="/sedes">Sedes</a>
+                </nav>
+
+                <!-- CTA -->
+                <a class="inline-flex h-[32px] w-[120px] rounded-pill p-[6px] transition hover:brightness-[1.02] shrink-0"
+                    style="background: rgb(var(--primary));" [href]="whatsappHref" target="_blank"
+                    rel="noopener noreferrer">
+
+                    <span
+                        class="inline-flex h-full w-full items-center justify-center rounded-pill text-white font-semibold text-[14px]"
+                        style="background: rgb(var(--primary));">
+                        Pide tu cita
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

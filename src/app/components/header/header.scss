@@ -1,0 +1,4 @@
+/* Si no tienes definido rounded-pill en Tailwind, esto garantiza el pill */
+:host {
+  display: block;
+}
