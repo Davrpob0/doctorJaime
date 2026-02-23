@@ -27,26 +27,19 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install
-        run: npm ci
+      - run: npm ci
 
       - name: Build
-        run: npm run build -- --configuration production --base-href /landingPage/browser
+        run: npm run build -- --configuration production --base-href /doctorJaime/
+
+      - name: Assert index.html
+        run: test -f dist/landingPage/browser/index.html
 
       - uses: actions/configure-pages@v5
-      - name: Debug dist
-        run: |
-          ls -la
-          ls -la dist || true
-          ls -la dist/landingPage || true
-          ls -la dist/landingPage/browser || true
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
-          # si tu salida queda en dist/doctor-jaime, cambia a:
-          # path: ./dist/doctor-jaime
+          path: dist/landingPage/browser
 
       - id: deployment
         uses: actions/deploy-pages@v4
