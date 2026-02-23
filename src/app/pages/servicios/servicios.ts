@@ -43,7 +43,7 @@ export class Servicios {
     {
       id: 'diseno',
       title: 'Diseño de Sonrisa',
-      img: '/images/SonrisaLanding.jpg',
+      img: 'images/SonrisaLanding.jpg',
       tag: 'Destacado',
       excerpt:
         'Transformamos tu sonrisa con técnicas avanzadas de estética dental. Carillas, blanqueamiento y contorneado personalizado para resultados naturales y duraderos.',
@@ -55,7 +55,7 @@ export class Servicios {
     {
       id: 'implanto',
       title: 'Rehabilitación e Implantología',
-      img: '/images/ImplanteLanding.jpg',
+      img: 'images/ImplanteLanding.jpg',
       excerpt:
         'Implantes dentales de última generación, coronas, puentes y prótesis. Recupera la función y estética de tu sonrisa de forma permanente.',
       detailsTitle: '¿Qué incluye?',
@@ -66,7 +66,7 @@ export class Servicios {
     {
       id: 'orto',
       title: 'Ortodoncia',
-      img: '/images/OrtodonciaLanding.jpg',
+      img: 'images/OrtodonciaLanding.jpg',
       excerpt:
         'Alineación dental con brackets metálicos, cerámicos o Invisalign. Tratamientos personalizados para niños, adolescentes y adultos con tecnología 3D.',
       detailsTitle: 'Opciones',
@@ -80,7 +80,7 @@ export class Servicios {
     {
       id: 'general',
       title: 'Odontología General',
-      icon: '/icons/stethoscope.svg',
+      icon: 'icons/stethoscope.svg',
       excerpt: 'Base del cuidado bucal: prevención, diagnóstico y limpiezas profesionales.',
       detailsText:
         'Evaluación general, profilaxis, planes preventivos y orientación personalizada para mantener tu salud oral.',
@@ -89,7 +89,7 @@ export class Servicios {
     {
       id: 'blanqueamiento',
       title: 'Blanqueamiento Dental',
-      icon: '/icons/sun.svg',
+      icon: 'icons/sun.svg',
       excerpt: 'Aclara el tono de tus dientes para una sonrisa brillante.',
       detailsText:
         'Tratamientos clínicos y/o supervisados. Indicaciones según sensibilidad y tono objetivo.',
@@ -98,7 +98,7 @@ export class Servicios {
     {
       id: 'endo',
       title: 'Endodoncia (Tratamiento de Conducto)',
-      icon: '/icons/heart.svg',
+      icon: 'icons/heart.svg',
       excerpt: 'Salvamos tus dientes tratando la pulpa dental infectada.',
       detailsText:
         'Control del dolor, limpieza del conducto, obturación y restauración según el caso.',
@@ -107,7 +107,7 @@ export class Servicios {
     {
       id: 'perio',
       title: 'Periodoncia',
-      icon: '/icons/shield.svg',
+      icon: 'icons/shield.svg',
       excerpt: 'Cuidado de las encías y tejidos de soporte.',
       detailsText:
         'Diagnóstico periodontal, control de placa, raspado y alisado radicular cuando aplica.',
@@ -116,7 +116,7 @@ export class Servicios {
     {
       id: 'cirugia',
       title: 'Cirugía Oral',
-      icon: '/icons/scissors.svg',
+      icon: 'icons/scissors.svg',
       excerpt: 'Procedimientos quirúrgicos especializados en boca y mandíbula.',
       detailsText:
         'Extracciones complejas, cirugías menores y procedimientos indicados por valoración clínica.',
