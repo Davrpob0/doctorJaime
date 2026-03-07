@@ -1,1 +1,167 @@
-<p>pacientes works!</p>
+<main class="bg-bg text-text pt-28">
+    <!-- HERO (igual patrón Casos de Éxito: SIN section-fade) -->
+    <section class="relative isolate overflow-hidden">
+        <!-- Glow suave (atrás) -->
+        <div class="pointer-events-none absolute inset-0 z-0">
+            <div
+                class="absolute -top-40 left-1/2 h-[520px] w-[920px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl">
+            </div>
+            <div class="absolute -top-32 left-20 h-[420px] w-[420px] rounded-full bg-primary/10 blur-3xl"></div>
+            <div class="absolute -top-32 right-20 h-[420px] w-[420px] rounded-full bg-primary/10 blur-3xl"></div>
+        </div>
+
+        <!-- Contenido (adelante) -->
+        <div class="relative z-10 mx-auto max-w-6xl px-6 pb-24 md:pb-28">
+            <!-- baja el texto bajo el header -->
+            <div class="h-20 md:h-24 lg:h-28"></div>
+
+            <div class="text-center max-w-3xl mx-auto flex flex-col items-center">
+                <div
+                    class="inline-flex items-center justify-center gap-2 w-[170px] rounded-pill bg-primary/10 px-5 py-3 text-sm font-semibold text-primary">
+                    <span aria-hidden="true">♡</span>
+                    Centro de Atención
+                </div>
+
+                <h1 class="mt-8 text-[60px] md:text-[80px] leading-[1.02] tracking-[-0.02em] font-extrabold text-text"
+                    style="font-weight: 800;">
+                    Atención al <span class="text-primary">Paciente</span>
+                </h1>
+
+                <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed text-text/60" style="font-weight: 600;">
+                    Tu bienestar y tus derechos son nuestra prioridad. Encuentra aquí toda la información necesaria para
+                    tu
+                    atención.
+                </p>
+            </div>
+        </div>
+
+        <!-- “onda” / transición inferior EXACTA como Casos -->
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 bg-linear-to-b from-transparent to-bg2">
+        </div>
+    </section>
+
+    <!-- CONTENIDO (bg2) -->
+    <section class="bg-bg2">
+        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+            <!-- Título -->
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-[48px] md:text-[60px] leading-[1.05] tracking-tight font-extrabold text-text"
+                    style="font-weight: 800;">
+                    Derechos y Deberes
+                </h2>
+                <p class="mt-4 text-[16.5px] md:text-[18px] leading-relaxed text-text/60" style="font-weight: 600;">
+                    Conoce tus derechos como paciente y los compromisos que nos ayudan a brindarte el mejor servicio.
+                </p>
+            </div>
+
+            <div class="h-16 md:h-20"></div>
+
+            <!-- Cards (como tu referencia visual) -->
+            <div class="grid gap-10 md:gap-12 md:grid-cols-2 items-start">
+                <!-- Mis Derechos -->
+                <article class="rounded-[22px] bg-bg2 border border-black/10 shadow-soft overflow-hidden">
+                    <div class="p-[22px]">
+                        <div class="rounded-[18px] bg-bg2 px-8 py-10 relative">
+                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-[14px] overflow-hidden"
+                                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white);">
+                                <!-- ✅ ICONO -->
+                                <img src="icons/shield.png" alt="Mis derechos" class="h-6 w-6 object-contain" />
+                            </div>
+
+                            <h3 class="mt-6 text-[22px] tracking-tight text-text" style="font-weight: 900;">
+                                Mis Derechos
+                            </h3>
+
+                            <ul class="mt-7 space-y-5 text-[15.5px] leading-relaxed text-text/60">
+                                <li class="flex items-start gap-4">
+                                    <!-- ✅ Flecha alineada -->
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Elegir libremente al profesional de salud.</span>
+                                </li>
+
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Comunicación clara y comprensible con el médico.</span>
+                                </li>
+
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Recibir un trato digno y respetuoso.</span>
+                                </li>
+
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Privacidad y confidencialidad de su historia clínica.</span>
+                                </li>
+
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Recibir información sobre costos y consentimientos informados.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mis Deberes -->
+                <article class="rounded-[22px] bg-bg2 border border-black/10 shadow-soft overflow-hidden">
+                    <div class="p-[22px]">
+                        <div class="rounded-[18px] bg-bg2 px-8 py-10 relative">
+                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-[14px] overflow-hidden"
+                                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white);">
+                                <!-- ✅ ICONO -->
+                                <img src="icons/list.png" alt="Mis deberes" class="h-6 w-6 object-contain" />
+                            </div>
+
+                            <h3 class="mt-6 text-[22px] tracking-tight text-text" style="font-weight: 900;">
+                                Mis Deberes
+                            </h3>
+
+                            <ul class="mt-7 space-y-5 text-[15.5px] leading-relaxed text-text/60">
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Suministrar información veraz y completa sobre su estado de salud.</span>
+                                </li>
+
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Cumplir con las normas y reglamentos de la clínica.</span>
+                                </li>
+
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Tratar con respeto al personal médico y administrativo.</span>
+                                </li>
+
+                                <li class="flex items-start gap-4">
+                                    <span class="pt-[2px] leading-none"
+                                        style="color: rgb(var(--primary)); font-weight: 900;"
+                                        aria-hidden="true">›</span>
+                                    <span>Cumplir oportunamente con las citas acordadas (o avisar con 24h de
+                                        antelación).</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+</main>

@@ -1,0 +1,132 @@
+/* Onda inferior del hero */
+.hero-wave {
+  background: radial-gradient(120% 140% at 50% 0%, rgba(0, 0, 0, 0) 55%, rgb(var(--bg2)) 56%);
+}
+
+/* BEFORE/AFTER slider */
+.ba {
+  --pos: 50%;
+  height: 260px;
+  position: relative;
+}
+
+.ba__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* AFTER visible a la derecha */
+.ba__img--after {
+  clip-path: inset(0 0 0 var(--pos));
+}
+
+/* Línea vertical */
+.ba__divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 4px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9;
+}
+
+/* Knob */
+.ba__knob {
+  position: absolute;
+  left: var(--pos);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 44px;
+  width: 44px;
+  border-radius: 999px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+/* Input invisible encima (drag) */
+.ba__range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 11;
+}
+
+/* Badges */
+.ba__badge {
+  position: absolute;
+  top: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  z-index: 10;
+}
+
+.ba__badge--before {
+  left: 14px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+}
+
+.ba__badge--after {
+  right: 14px;
+  background: rgb(var(--primary));
+  color: #fff;
+}
+
+/* Chip categoría */
+.ba__chip {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: #0b3e91;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 10;
+}
+
+/* ✅ Difuminado inferior hacia el fondo blanco (bg2/surface) */
+.ba::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px; /* más alto = más perceptible */
+  pointer-events: none;
+  z-index: 6;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 55%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+/* Quotes */
+.quote {
+  font-size: 22px;
+  line-height: 1;
+  margin-top: 2px;
+}

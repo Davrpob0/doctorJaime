@@ -1,12 +1,14 @@
 <main class="text-text pt-28">
     <!-- HERO -->
     <section id="inicio" class="bg-bg section-fade to-bg2 relative min-h-[85vh] md:min-h-[90vh]">
-        <div class="absolute inset-0 fade-bg">
+        <!-- Fondo: NO debe capturar clicks -->
+        <div class="absolute inset-0 fade-bg pointer-events-none">
             <div class="h-full w-full bg-center bg-cover" style="background-image: url('images/hero.jpg');"></div>
             <div class="absolute inset-0 bg-white/75"></div>
             <div class="absolute inset-0 bg-linear-to-b from-white/40 via-white/20 to-bg"></div>
         </div>
 
+        <!-- Contenido -->
         <div class="fade-content">
             <div class="relative mx-auto max-w-6xl px-6 min-h-[85vh] md:min-h-[90vh] grid items-center">
                 <div class="py-16 md:py-20">
@@ -45,9 +47,9 @@
                                 </span>
                             </a>
 
-                            <!-- Ver servicios -->
+                            <!-- Ver servicios (ahora navega a la página /servicios) -->
                             <a class="inline-flex h-[64px] w-[150px] rounded-pill border-2 bg-white px-10 transition hover:bg-white/80
-                       items-center justify-center" style="border-color: rgb(var(--primary));" href="#servicios">
+                       items-center justify-center" style="border-color: rgb(var(--primary));" routerLink="/servicios">
                                 <span class="inline-flex w-full items-center justify-center">
                                     <span class="whitespace-nowrap font-semibold"
                                         style="color: rgb(var(--primary));">Ver servicios</span>
@@ -58,7 +60,7 @@
                 </div>
             </div>
 
-            <!-- IMPORTANTE: este gradiente del hero debe ir a bg2 (siguiente sección) -->
+            <!-- IMPORTANTE: gradiente del hero debe ir a bg2 -->
             <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-bg2">
             </div>
         </div>
@@ -97,7 +99,7 @@
                             <!-- Card 1 -->
                             <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
                                 <div class="p-[22px]">
-                                    <div class="rounded-[18px] bg-surface px-7 py-7">
+                                    <div class="rounded-[18px] bg-surface px-7 py-7 flex flex-col gap-4">
                                         <div class="rounded-[16px] overflow-hidden bg-black/5">
                                             <img src="images/SonrisaLanding.jpg" alt="Diseño de Sonrisa"
                                                 class="h-[190px] w-full object-cover" loading="lazy" />
@@ -115,7 +117,7 @@
                                         </p>
 
                                         <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                            href="#">
+                                            routerLink="/servicios">
                                             Más información <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
@@ -125,7 +127,7 @@
                             <!-- Card 2 -->
                             <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
                                 <div class="p-[22px]">
-                                    <div class="rounded-[18px] bg-surface px-7 py-7">
+                                    <div class="rounded-[18px] bg-surface px-7 py-7 flex flex-col gap-4">
                                         <div class="rounded-[16px] overflow-hidden bg-black/5">
                                             <img src="images/OrtodonciaLanding.jpg" alt="Ortodoncia"
                                                 class="h-[190px] w-full object-cover" loading="lazy" />
@@ -143,7 +145,7 @@
                                         </p>
 
                                         <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                            href="#">
+                                            routerLink="/servicios">
                                             Más información <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
@@ -153,7 +155,7 @@
                             <!-- Card 3 -->
                             <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
                                 <div class="p-[22px] gap-y">
-                                    <div class="rounded-[18px] bg-surface px-7 py-7">
+                                    <div class="rounded-[18px] bg-surface px-7 py-7 flex flex-col gap-4">
                                         <div class="rounded-[16px] overflow-hidden bg-black/5">
                                             <img src="images/ImplanteLanding.jpg" alt="Rehabilitación e Implantología"
                                                 class="h-[190px] w-full object-cover" loading="lazy" />
@@ -171,7 +173,7 @@
                                         </p>
 
                                         <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                            href="#">
+                                            routerLink="/servicios">
                                             Más información <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
@@ -185,7 +187,7 @@
                     <!-- Botón -->
                     <div class="flex justify-center">
                         <a class="inline-flex h-[56px] rounded-pill border-2 bg-white p-[10px] transition hover:bg-white/80"
-                            style="border-color: rgb(var(--primary));" href="#">
+                            style="border-color: rgb(var(--primary));" routerLink="/servicios">
                             <span class="inline-flex h-full items-center justify-center rounded-pill px-10">
                                 <span class="font-semibold" style="color: rgb(var(--primary));">Ver todos nuestros
                                     servicios y tratamientos</span>
