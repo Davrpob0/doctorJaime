@@ -18,7 +18,7 @@
             <div class="text-center max-w-3xl mx-auto flex flex-col items-center">
                 <div
                     class="inline-flex items-center justify-center gap-2 rounded-pill h-[25px] w-[250px] bg-primary/10 px-5 py-3 text-sm font-semibold text-primary">
-                    <span aria-hidden="true">🩺</span>
+                    <img src="icons/stethoscope.png" alt="" class="h-5 w-5" />
                     Especialidades Odontológicas
                 </div>
 
@@ -37,182 +37,219 @@
         </div>
     </section>
 
-    <!-- GRID SERVICIOS -->
-    <section class="mx-auto max-w-6xl px-6 pt-18 md:pt-22 pb-24 md:pb-28">
-        <div class="h-10 md:h-14"></div>
+    <!-- GRID SERVICIOS (bg) -->
+    <section class="bg-bg">
+        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+            <div class="h-10 md:h-14"></div>
 
-        <!-- =========================
-      HERO CARDS (PRINCIPALES)
-      - Colapsadas: mismo alto
-      - Expandidas: mismo alto entre sí
-      - Las colapsadas NO cambian cuando otra expande
-    ========================== -->
-        <div class="grid gap-10 md:gap-12 md:grid-cols-3 items-start">
-            <article *ngFor="let c of heroCards" class="rounded-[26px] bg-surface shadow-soft overflow-hidden ring-2 ring-transparent
-               hover:ring-primary/80 transition transform-gpu hover:-translate-y-[2px]"
-                [class.ring-primary]="isExpanded(c.id)">
+            <!-- =========================
+        HERO CARDS (PRINCIPALES)
+        - Colapsadas: mismo alto
+        - Expandidas: mismo alto entre sí
+        - Las colapsadas NO cambian cuando otra expande
+      ========================== -->
+            <div class="grid gap-10 md:gap-12 md:grid-cols-3 items-start">
+                <article *ngFor="let c of heroCards" class="rounded-[26px] bg-surface shadow-soft overflow-hidden ring-2 ring-transparent
+                 hover:ring-primary/80 transition transform-gpu hover:-translate-y-[2px]"
+                    [class.ring-primary]="isExpanded(c.id)">
 
-                <div class="p-[22px]">
-                    <!-- IMPORTANTE:
-               - NO h-full (para que no se estiren las otras)
-               - min-h cambia si está expandida para igualarlas entre sí -->
-                    <div class="rounded-[20px] bg-surface px-7 py-7 flex flex-col transition-[min-height] duration-200"
-                        [ngClass]="isExpanded(c.id) ? 'min-h-[720px]' : 'min-h-[400px]'">
+                    <div class="p-[22px]">
+                        <div class="rounded-[20px] bg-surface px-7 py-7 flex flex-col transition-[min-height] duration-200"
+                            [ngClass]="isExpanded(c.id) ? 'min-h-[720px]' : 'min-h-[400px]'">
 
-                        <!-- Imagen -->
-                        <div class="rounded-[18px] overflow-hidden bg-black/5 shrink-0">
-                            <img [src]="c.img" [alt]="c.title" class="h-[190px] w-full object-cover" loading="lazy" />
-                        </div>
-
-                        <!-- Título + tag -->
-                        <div class="mt-6 flex items-center justify-between gap-4 shrink-0">
-                            <h3 class="text-[20px] font-extrabold text-text">{{ c.title }}</h3>
-                            <span *ngIf="c.tag"
-                                class="rounded-pill bg-primary/10 px-4 py-2 text-[12px] font-semibold text-primary">
-                                {{ c.tag }}
-                            </span>
-                        </div>
-
-                        <!-- Excerpt -->
-                        <p class="mt-4 text-[15.5px] leading-relaxed text-text/55 shrink-0">
-                            {{ c.excerpt }}
-                        </p>
-
-                        <!-- Controles: pegados al fondo del estado actual -->
-                        <div class="mt-auto pt-5 flex items-center justify-between shrink-0">
-                            <button type="button"
-                                class="inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                (click)="toggle(c.id)">
-                                {{ isExpanded(c.id) ? 'Ver menos' : 'Leer más' }}
-                            </button>
-
-                            <button type="button"
-                                class="h-10 w-10 rounded-full bg-primary/10 text-primary grid place-items-center hover:bg-primary/15 transition"
-                                aria-label="Expandir" (click)="toggle(c.id)">
-                                <span aria-hidden="true" class="transition-transform"
-                                    [class.rotate-180]="isExpanded(c.id)">⌄</span>
-                            </button>
-                        </div>
-
-                        <!-- EXPAND (sin scroll) -->
-                        <div *ngIf="isExpanded(c.id)" class="mt-6">
-                            <div class="h-px w-full bg-black/10"></div>
-
-                            <div class="mt-5 text-[15.5px] leading-relaxed text-text/60">
-                                <span *ngIf="c.detailsTitle"
-                                    class="font-semibold text-text/75">{{ c.detailsTitle }}</span>
-                                <span>{{ c.detailsText }}</span>
+                            <!-- Imagen -->
+                            <div class="rounded-[18px] overflow-hidden bg-black/5 shrink-0">
+                                <img [src]="c.img" [alt]="c.title" class="h-[190px] w-full object-cover"
+                                    loading="lazy" />
                             </div>
 
-                            <div *ngIf="c.benefits?.length" class="mt-5">
-                                <div class="font-semibold text-text/75">Beneficios:</div>
-                                <ul class="mt-3 space-y-2 text-[15px] text-text/65">
-                                    <li *ngFor="let b of c.benefits" class="flex items-start gap-3">
-                                        <span class="mt-[7px] h-2 w-2 rounded-full bg-primary"></span>
-                                        <span>{{ b }}</span>
-                                    </li>
-                                </ul>
+                            <!-- Título + tag -->
+                            <div class="mt-6 flex items-center justify-between gap-4 shrink-0">
+                                <h3 class="text-[20px] font-extrabold text-text">{{ c.title }}</h3>
+                                <span *ngIf="c.tag"
+                                    class="rounded-pill bg-primary/10 px-4 py-2 text-[12px] font-semibold text-primary">
+                                    {{ c.tag }}
+                                </span>
                             </div>
 
-                            <div class="mt-7">
-                                <a class="inline-flex h-[56px] w-full rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
-                          items-center justify-center"
-                                    style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
-                                    [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
-                                    <span class="inline-flex w-full items-center justify-center gap-3">
-                                        <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
-                                        <span class="whitespace-nowrap font-semibold text-white">Consultar</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <div class="h-10 md:h-14"></div>
-
-        <!-- =========================
-      SPECIALTIES (SECUNDARIAS)
-      - Más pequeñas colapsadas
-      - Expandidas mismo alto entre sí
-      - Colapsadas NO cambian por otras
-    ========================== -->
-        <div class="grid gap-10 md:gap-12 md:grid-cols-3 items-start">
-            <article *ngFor="let s of specialties" class="rounded-[26px] bg-surface shadow-soft overflow-hidden ring-2 ring-transparent
-               hover:ring-primary/80 transition transform-gpu hover:-translate-y-[2px]"
-                [class.ring-primary]="isExpanded(s.id)">
-
-                <div class="p-[22px]">
-                    <div class="rounded-[20px] bg-surface px-6 py-6 flex flex-col transition-[min-height] duration-200"
-                        [ngClass]="isExpanded(s.id) ? 'min-h-[520px]' : 'min-h-[220px]'">
-
-                        <!-- icon -->
-                        <div
-                            class="h-11 w-11 rounded-[14px] bg-primary/10 grid place-items-center overflow-hidden shrink-0">
-                            <img *ngIf="s.icon" [src]="s.icon" alt="" class="h-6 w-6" />
-                        </div>
-
-                        <h3 class="mt-5 text-[18px] font-extrabold text-text">{{ s.title }}</h3>
-
-                        <p class="mt-3 text-[14.5px] leading-relaxed text-text/55">
-                            {{ s.excerpt }}
-                        </p>
-
-                        <!-- Controles abajo -->
-                        <div class="mt-auto pt-5 flex items-center justify-between shrink-0">
-                            <button type="button"
-                                class="inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                (click)="toggle(s.id)">
-                                {{ isExpanded(s.id) ? 'Ver menos' : 'Leer más' }}
-                            </button>
-
-                            <button type="button"
-                                class="h-10 w-10 rounded-full bg-primary/10 text-primary grid place-items-center hover:bg-primary/15 transition"
-                                aria-label="Expandir" (click)="toggle(s.id)">
-                                <span aria-hidden="true" class="transition-transform"
-                                    [class.rotate-180]="isExpanded(s.id)">⌄</span>
-                            </button>
-                        </div>
-
-                        <!-- expand -->
-                        <div *ngIf="isExpanded(s.id)" class="mt-6">
-                            <div class="h-px w-full bg-black/10"></div>
-
-                            <p class="mt-5 text-[14.5px] leading-relaxed text-text/60">
-                                {{ s.detailsText }}
+                            <!-- Excerpt -->
+                            <p class="mt-4 text-[15.5px] leading-relaxed text-text/55 shrink-0">
+                                {{ c.excerpt }}
                             </p>
 
-                            <div *ngIf="s.benefits?.length" class="mt-5">
-                                <div class="font-semibold text-text/75">Beneficios:</div>
-                                <ul class="mt-3 space-y-2 text-[14.5px] text-text/65">
-                                    <li *ngFor="let b of s.benefits" class="flex items-start gap-3">
-                                        <span class="mt-[7px] h-2 w-2 rounded-full bg-primary"></span>
-                                        <span>{{ b }}</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="mt-7">
-                                <a class="inline-flex h-[56px] w-full rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
-                          items-center justify-center"
-                                    style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
-                                    [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
-                                    <span class="inline-flex w-full items-center justify-center gap-3">
-                                        <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
-                                        <span class="whitespace-nowrap font-semibold text-white">Consultar</span>
+                            <!-- Controles (pill) -->
+                            <div class="mt-auto pt-5 w-full max-w-[320px] cursor-pointer select-none"
+                                (click)="toggle(c.id)" role="button" tabindex="0" (keydown.enter)="toggle(c.id)"
+                                (keydown.space)="toggle(c.id)">
+                                <div class="flex items-center justify-center gap-45 rounded-pill px-7 py-2
+           transition-colors duration-200 hover:bg-primary/15">
+                                    <span class="font-semibold text-text">
+                                        {{ isExpanded(c.id) ? 'Leer menos' : 'Leer más' }}
                                     </span>
-                                </a>
-                            </div>
-                        </div>
 
+                                    <img src="icons/arrow.png" alt="" class="h-5 w-5 transition-transform"
+                                        [class.rotate-180]="isExpanded(c.id)" />
+                                </div>
+                            </div>
+
+                            <!-- EXPAND -->
+                            <div *ngIf="isExpanded(c.id)" class="mt-6">
+                                <div class="h-px w-full bg-black/10"></div>
+
+                                <div class="mt-5 text-[15.5px] leading-relaxed text-text/60">
+                                    <span *ngIf="c.detailsTitle"
+                                        class="font-semibold text-text/75">{{ c.detailsTitle }}</span>
+                                    <span>{{ c.detailsText }}</span>
+                                </div>
+
+                                <div *ngIf="c.benefits?.length" class="mt-5">
+                                    <div class="font-semibold text-text/75">Beneficios:</div>
+                                    <ul class="mt-3 space-y-2 text-[15px] text-text/65">
+                                        <li *ngFor="let b of c.benefits" class="flex items-start gap-3">
+                                            <span class="mt-[7px] h-2 w-2 rounded-full bg-primary"></span>
+                                            <span>{{ b }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="mt-7">
+                                    <a class="inline-flex h-[56px] w-full rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
+             items-center justify-center"
+                                        style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
+                                        [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
+                                        <span class="inline-flex w-full items-center justify-center gap-3">
+                                            <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
+                                            <span class="whitespace-nowrap font-semibold text-white">Consultar</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </div>
+
+            <div class="h-10 md:h-14"></div>
+
+            <!-- =========================
+        SPECIALTIES (SECUNDARIAS)
+        - Más pequeñas colapsadas
+        - Expandidas mismo alto entre sí
+        - Colapsadas NO cambian por otras
+      ========================== -->
+            <div class="grid gap-10 md:gap-12 md:grid-cols-3 items-start">
+                <article *ngFor="let s of specialties" class="rounded-[26px] bg-surface shadow-soft overflow-hidden ring-2 ring-transparent
+                 hover:ring-primary/80 transition transform-gpu hover:-translate-y-[2px]"
+                    [class.ring-primary]="isExpanded(s.id)">
+
+                    <div class="p-[22px]">
+                        <div class="rounded-[20px] bg-surface px-6 py-6 flex flex-col transition-[min-height] duration-200"
+                            [ngClass]="isExpanded(s.id) ? 'min-h-[520px]' : 'min-h-[220px]'">
+
+                            <!-- icon -->
+                            <div
+                                class="h-11 w-11 rounded-[14px] bg-primary/10 grid place-items-center overflow-hidden shrink-0">
+                                <img *ngIf="s.icon" [src]="s.icon" alt="" class="h-6 w-6" />
+                            </div>
+
+                            <h3 class="mt-5 text-[18px] font-extrabold text-text">{{ s.title }}</h3>
+
+                            <p class="mt-3 text-[14.5px] leading-relaxed text-text/55">
+                                {{ s.excerpt }}
+                            </p>
+
+                            <!-- Controles (pill) -->
+                            <div class="mt-auto pt-5 w-full max-w-[320px] cursor-pointer select-none"
+                                (click)="toggle(s.id)" role="button" tabindex="0" (keydown.enter)="toggle(s.id)"
+                                (keydown.space)="toggle(s.id)">
+                                <div class="flex items-center justify-center gap-45 rounded-pill px-7 py-2
+           transition-colors duration-200 hover:bg-primary/15">
+                                    <span class="font-semibold text-text">
+                                        {{ isExpanded(s.id) ? 'Leer menos' : 'Leer más' }}
+                                    </span>
+
+                                    <img src="icons/arrow.png" alt="" class="h-5 w-5 transition-transform"
+                                        [class.rotate-180]="isExpanded(s.id)" />
+                                </div>
+                            </div>
+
+                            <!-- EXPAND -->
+                            <div *ngIf="isExpanded(s.id)" class="mt-6">
+                                <div class="h-px w-full bg-black/10"></div>
+
+                                <div class="mt-5 text-[15.5px] leading-relaxed text-text/60">
+                                    <span *ngIf="s.detailsTitle"
+                                        class="font-semibold text-text/75">{{ s.detailsTitle }}</span>
+                                    <span>{{ s.detailsText }}</span>
+                                </div>
+
+                                <div *ngIf="s.benefits?.length" class="mt-5">
+                                    <div class="font-semibold text-text/75">Beneficios:</div>
+                                    <ul class="mt-3 space-y-2 text-[15px] text-text/65">
+                                        <li *ngFor="let b of s.benefits" class="flex items-start gap-3">
+                                            <span class="mt-[7px] h-2 w-2 rounded-full bg-primary"></span>
+                                            <span>{{ b }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="mt-7">
+                                    <a class="inline-flex h-[56px] w-full rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
+             items-center justify-center"
+                                        style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
+                                        [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
+                                        <span class="inline-flex w-full items-center justify-center gap-3">
+                                            <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
+                                            <span class="whitespace-nowrap font-semibold text-white">Consultar</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
-    <div class="h-16 md:h-24"></div>
+    <!-- CTA / AYUDA (bg2) -->
+    <section class="bg-bg2">
+        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+            <div class="flex flex-col items-center text-center gap-3">
+                <!-- Icono -->
+                <div class="h-12 w-12 rounded-full bg-primary/15 grid place-items-center">
+                    <img src="icons/questionMark.png" alt="" class="h-5 w-5" />
+                </div>
+
+                <!-- Título -->
+                <h2 class="mt-6 text-[42px] md:text-[52px] leading-[1.05] tracking-tight text-text"
+                    style="font-weight: 800;">
+                    ¿No sabes qué tratamiento necesitas?
+                </h2>
+
+                <!-- Copy -->
+                <p class="mt-4 max-w-2xl text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
+                    Agenda una valoración inicial con nuestros especialistas. Te ayudaremos a encontrar la mejor
+                    solución para tu
+                    salud bucal.
+                </p>
+
+                <!-- Botón WhatsApp -->
+                <div class="mt-8">
+                    <a class="inline-flex h-[56px] w-[400px] rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
+                 items-center justify-center"
+                        style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
+                        [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
+                        <span class="inline-flex items-center gap-3">
+                            <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
+                            <span class="whitespace-nowrap font-semibold text-white">Hablar con un especialista por
+                                WhatsApp</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>

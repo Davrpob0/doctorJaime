@@ -40,6 +40,18 @@ export class Servicios {
 
   // Ajusta contenido libremente
   heroCards: ServiceCard[] = [
+
+    {
+      id: 'implanto',
+      title: 'Rehabilitación e Implantología',
+      img: 'images/ImplanteLanding.jpg',
+      excerpt:
+        'Implantes dentales de última generación, coronas, puentes y prótesis. Recupera la función y estética de tu sonrisa de forma permanente.',
+      detailsTitle: '¿Qué incluye?',
+      detailsText:
+        'Valoración clínica, planificación del caso, rehabilitación protésica y seguimiento post-tratamiento para asegurar resultados estables.',
+      benefits: ['Función masticatoria', 'Estabilidad', 'Estética'],
+    },
     {
       id: 'diseno',
       title: 'Diseño de Sonrisa',
@@ -51,17 +63,6 @@ export class Servicios {
       detailsText:
         'blanqueamiento, carillas y ortodoncia. Utilizamos la técnica de Mock-up (Planificación Digital) para que puedas visualizar los resultados antes de iniciar el tratamiento.',
       benefits: ['Mayor confianza', 'Estética natural', 'Mordida funcional'],
-    },
-    {
-      id: 'implanto',
-      title: 'Rehabilitación e Implantología',
-      img: 'images/ImplanteLanding.jpg',
-      excerpt:
-        'Implantes dentales de última generación, coronas, puentes y prótesis. Recupera la función y estética de tu sonrisa de forma permanente.',
-      detailsTitle: '¿Qué incluye?',
-      detailsText:
-        'Valoración clínica, planificación del caso, rehabilitación protésica y seguimiento post-tratamiento para asegurar resultados estables.',
-      benefits: ['Función masticatoria', 'Estabilidad', 'Estética'],
     },
     {
       id: 'orto',
@@ -89,7 +90,7 @@ export class Servicios {
     {
       id: 'blanqueamiento',
       title: 'Blanqueamiento Dental',
-      icon: 'icons/sun.svg',
+      icon: 'icons/brillo.png',
       excerpt: 'Aclara el tono de tus dientes para una sonrisa brillante.',
       detailsText:
         'Tratamientos clínicos y/o supervisados. Indicaciones según sensibilidad y tono objetivo.',
@@ -98,7 +99,7 @@ export class Servicios {
     {
       id: 'endo',
       title: 'Endodoncia (Tratamiento de Conducto)',
-      icon: 'icons/heart.svg',
+      icon: 'icons/heart.png',
       excerpt: 'Salvamos tus dientes tratando la pulpa dental infectada.',
       detailsText:
         'Control del dolor, limpieza del conducto, obturación y restauración según el caso.',
@@ -107,7 +108,7 @@ export class Servicios {
     {
       id: 'perio',
       title: 'Periodoncia',
-      icon: 'icons/shield.svg',
+      icon: 'icons/shield.png',
       excerpt: 'Cuidado de las encías y tejidos de soporte.',
       detailsText:
         'Diagnóstico periodontal, control de placa, raspado y alisado radicular cuando aplica.',
@@ -116,7 +117,7 @@ export class Servicios {
     {
       id: 'cirugia',
       title: 'Cirugía Oral',
-      icon: 'icons/scissors.svg',
+      icon: 'icons/scissors.png',
       excerpt: 'Procedimientos quirúrgicos especializados en boca y mandíbula.',
       detailsText:
         'Extracciones complejas, cirugías menores y procedimientos indicados por valoración clínica.',
