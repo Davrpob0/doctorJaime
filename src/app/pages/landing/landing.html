@@ -1,38 +1,282 @@
-<main class="bg-bg text-text pt-28">
+<main class="text-text pt-28">
     <!-- HERO -->
-    <section id="inicio" class="relative min-h-[85vh] md:min-h-[90vh]">
-        <div class="absolute inset-0">
+    <section id="inicio" class="bg-bg section-fade to-bg2 relative min-h-[85vh] md:min-h-[90vh]">
+        <div class="absolute inset-0 fade-bg">
             <div class="h-full w-full bg-center bg-cover" style="background-image: url('images/hero.jpg');"></div>
             <div class="absolute inset-0 bg-white/75"></div>
             <div class="absolute inset-0 bg-linear-to-b from-white/40 via-white/20 to-bg"></div>
         </div>
 
-        <div class="relative mx-auto max-w-6xl px-6 min-h-[85vh] md:min-h-[90vh] grid items-center">
-            <div class="py-16 md:py-20">
-                <div class="max-w-2xl translate-x-6 md:translate-x-14 lg:translate-x-20">
-                    <div class="inline-flex items-center rounded-pill text-sm font-semibold" style="
-              padding: 12px 26px;
-              background: color-mix(in srgb, rgb(var(--primary)) 16%, white);
-              color: rgb(var(--primary-600));
-              line-height: 1;
-            ">
-                        Centro Odontológico Premium en Medellín
+        <div class="fade-content">
+            <div class="relative mx-auto max-w-6xl px-6 min-h-[85vh] md:min-h-[90vh] grid items-center">
+                <div class="py-16 md:py-20">
+                    <div class="max-w-2xl translate-x-6 md:translate-x-14 lg:translate-x-20">
+                        <div class="inline-flex items-center rounded-pill text-sm font-semibold" style="
+                padding: 12px 26px;
+                background: color-mix(in srgb, rgb(var(--primary)) 16%, white);
+                color: rgb(var(--primary-600));
+                line-height: 1;
+              ">
+                            Centro Odontológico Premium en Medellín
+                        </div>
+
+                        <h1 class="mt-[16px] text-[70px] leading-[1.02] tracking-[-0.02em]
+                     md:mt-[64px] md:text-[84px] md:leading-[0.98]
+                     lg:text-[92px]" style="font-weight: 800;">
+                            Dr. Jaime A. Jimenez
+                        </h1>
+
+                        <p
+                            class="mt-[16px] text-[20px] md:text-[22px] font-[600] text-text/80 leading-relaxed max-w-[40rem]">
+                            Enfoque estético, tecnología de punta y rapidez en la atención.
+                            Transformamos sonrisas con los más altos estándares de calidad.
+                        </p>
+
+                        <div class="mt-[24px] flex flex-wrap items-center gap-5">
+                            <!-- WhatsApp -->
+                            <a class="inline-flex h-[64px] w-[300px] rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
+                       items-center justify-center"
+                                style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
+                                [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
+                                <span class="inline-flex w-full items-center justify-center gap-3">
+                                    <img src="icons/whatsapp.png" class="h-6 w-6 block" alt="WhatsApp" />
+                                    <span class="whitespace-nowrap font-semibold text-white">Agenda tu cita por
+                                        WhatsApp</span>
+                                </span>
+                            </a>
+
+                            <!-- Ver servicios -->
+                            <a class="inline-flex h-[64px] w-[150px] rounded-pill border-2 bg-white px-10 transition hover:bg-white/80
+                       items-center justify-center" style="border-color: rgb(var(--primary));" href="#servicios">
+                                <span class="inline-flex w-full items-center justify-center">
+                                    <span class="whitespace-nowrap font-semibold"
+                                        style="color: rgb(var(--primary));">Ver servicios</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMPORTANTE: este gradiente del hero debe ir a bg2 (siguiente sección) -->
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-bg2">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS (bg2) -->
+    <section id="servicios" class="bg-bg2 section-fade to-bg">
+        <div class="fade-content">
+            <div class="mx-auto max-w-6xl px-6 section-content-pad pt-28 md:pt-32 pb-36 md:pb-44">
+                <div class="flex flex-col items-center">
+                    <!-- Encabezado -->
+                    <div class="text-center max-w-3xl mx-auto">
+                        <div
+                            class="inline-flex w-[300px] items-center gap-2 rounded-pill bg-primary/10 px-5 py-3 text-sm font-semibold text-primary justify-center">
+                            <span aria-hidden="true">✦</span>
+                            Excelencia en cada tratamiento
+                        </div>
+
+                        <h2 class="mt-8 text-[52px] leading-[1.02] tracking-[-0.02em] font-extrabold
+                     md:text-[64px] md:leading-[0.98]" style="font-weight: 800;">
+                            Nuestros Principales Servicios
+                        </h2>
+
+                        <p
+                            class="mt-6 text-[18px] md:text-[20px] font-[600] text-text/80 leading-relaxed max-w-[48rem] mx-auto">
+                            Ofrecemos tratamientos dentales de alta calidad con tecnología de vanguardia y un equipo
+                            especializado
+                        </p>
                     </div>
 
-                    <h1 class="mt-[16px] text-[70px] leading-[1.02] tracking-[-0.02em]
-                   md:mt-[64px] md:text-[84px] md:leading-[0.98]
-                   lg:text-[92px]" style="font-weight: 800;">
-                        Dr. Jaime A. Jimenez
-                    </h1>
+                    <div class="h-16 md:h-20"></div>
 
-                    <p
-                        class="mt-[16px] text-[20px] md:text-[22px] font-[600] text-text/80 leading-relaxed max-w-[40rem]">
-                        Enfoque estético, tecnología de punta y rapidez en la atención.
-                        Transformamos sonrisas con los más altos estándares de calidad.
+                    <!-- Cards -->
+                    <div class="w-full">
+                        <div class="grid gap-10 md:gap-12 md:grid-cols-3">
+                            <!-- Card 1 -->
+                            <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
+                                <div class="p-[22px]">
+                                    <div class="rounded-[18px] bg-surface px-7 py-7">
+                                        <div class="rounded-[16px] overflow-hidden bg-black/5">
+                                            <img src="images/SonrisaLanding.jpg" alt="Diseño de Sonrisa"
+                                                class="h-[190px] w-full object-cover" loading="lazy" />
+                                        </div>
+
+                                        <h3 class="mt-7 text-[20px] tracking-[-0.01em] text-text"
+                                            style="font-weight: 800;">
+                                            Diseño de Sonrisa
+                                        </h3>
+
+                                        <p class="mt-5 text-[15.5px] font-[600] text-text/80 leading-relaxed">
+                                            Transformamos tu sonrisa con técnicas avanzadas de estética dental.
+                                            Carillas, blanqueamiento y
+                                            contorneado personalizado para resultados naturales y duraderos.
+                                        </p>
+
+                                        <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
+                                            href="#">
+                                            Más información <span aria-hidden="true">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Card 2 -->
+                            <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
+                                <div class="p-[22px]">
+                                    <div class="rounded-[18px] bg-surface px-7 py-7">
+                                        <div class="rounded-[16px] overflow-hidden bg-black/5">
+                                            <img src="images/OrtodonciaLanding.jpg" alt="Ortodoncia"
+                                                class="h-[190px] w-full object-cover" loading="lazy" />
+                                        </div>
+
+                                        <h3 class="mt-7 text-[20px] tracking-[-0.01em] text-text"
+                                            style="font-weight: 800;">
+                                            Ortodoncia
+                                        </h3>
+
+                                        <p class="mt-5 text-[15.5px] font-[600] text-text/80 leading-relaxed">
+                                            Alineación dental con brackets metálicos, cerámicos o Invisalign.
+                                            Tratamientos personalizados para niños,
+                                            adolescentes y adultos con tecnología 3D.
+                                        </p>
+
+                                        <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
+                                            href="#">
+                                            Más información <span aria-hidden="true">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Card 3 -->
+                            <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
+                                <div class="p-[22px] gap-y">
+                                    <div class="rounded-[18px] bg-surface px-7 py-7">
+                                        <div class="rounded-[16px] overflow-hidden bg-black/5">
+                                            <img src="images/ImplanteLanding.jpg" alt="Rehabilitación e Implantología"
+                                                class="h-[190px] w-full object-cover" loading="lazy" />
+                                        </div>
+
+                                        <h3 class="mt-7 text-[20px] tracking-[-0.01em] text-text"
+                                            style="font-weight: 800;">
+                                            Rehabilitación e Implantología
+                                        </h3>
+
+                                        <p class="mt-5 text-[15.5px] font-[600] text-text/80 leading-relaxed">
+                                            Implantes dentales de última generación, coronas, puentes y prótesis.
+                                            Recupera la función y estética de tu
+                                            sonrisa de forma permanente.
+                                        </p>
+
+                                        <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
+                                            href="#">
+                                            Más información <span aria-hidden="true">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="h-16 md:h-20"></div>
+
+                    <!-- Botón -->
+                    <div class="flex justify-center">
+                        <a class="inline-flex h-[56px] rounded-pill border-2 bg-white p-[10px] transition hover:bg-white/80"
+                            style="border-color: rgb(var(--primary));" href="#">
+                            <span class="inline-flex h-full items-center justify-center rounded-pill px-10">
+                                <span class="font-semibold" style="color: rgb(var(--primary));">Ver todos nuestros
+                                    servicios y tratamientos</span>
+                                <span class="ml-3" aria-hidden="true" style="color: rgb(var(--primary));">→</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="h-20 md:h-28"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS (bg) -->
+    <section id="nosotros" class="bg-bg">
+        <div class="mx-auto max-w-6xl px-6 section-content-pad pt-28 md:pt-32 pb-36 md:pb-44">
+            <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+                <!-- Columna imagen -->
+                <div class="relative pb-24 md:pb-28">
+                    <div class="rounded-[26px] overflow-hidden shadow-soft bg-black/5">
+                        <img src="images/Equipo.jpg" alt="Equipo de trabajo" class="w-full h-[520px] object-cover"
+                            loading="lazy" />
+                    </div>
+
+                    <div class="absolute -bottom-4 md:-bottom-6 right-10 rounded-[18px] p-[10px] shadow-soft"
+                        style="background: rgb(var(--primary));">
+                        <div class="rounded-[16px] px-8 py-6 text-white" style="background: rgb(var(--primary));">
+                            <div class="flex items-center gap-4">
+                                <div class="badge-icon">
+                                    <svg class="badge-smile" viewBox="0 0 56 56" aria-hidden="true">
+                                        <circle class="badge-smile__arc" cx="28" cy="28" r="14"></circle>
+                                    </svg>
+                                </div>
+                                <div class="leading-tight">
+                                    <div class="text-[26px] font-extrabold">10,000+</div>
+                                    <div class="text-[13px] opacity-95 font-semibold">Sonrisas transformadas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna contenido -->
+                <div class="flex flex-col gap-8 md:gap-10">
+                    <div
+                        class="inline-flex h-[50px] w-[150px] items-center gap-2 rounded-pill bg-primary/10 px-5 py-3 text-sm font-semibold text-primary justify-center">
+                        Sobre Nosotros
+                    </div>
+
+                    <h2 class="text-[56px] leading-[1.02] tracking-[-0.02em] md:text-[64px] md:leading-[0.98]"
+                        style="font-weight: 800;">
+                        Excelencia en <span style="color: rgb(var(--primary));">odontología</span><br />
+                        <span style="color: rgb(var(--primary));">especializada</span>
+                    </h2>
+
+                    <p class="text-[18px] md:text-[20px] font-[600] text-text/80 leading-relaxed max-w-[42rem]">
+                        Ofrecemos a nuestros pacientes el mejor y más calificado grupo de profesionales especializados.
+                        Nuestra misión es
+                        brindar tratamientos de alta calidad en un ambiente cálido y acogedor, utilizando la tecnología
+                        más avanzada del
+                        mercado.
                     </p>
 
-                    <div class="mt-[24px] flex flex-wrap items-center gap-5">
-                        <!-- WhatsApp -->
+                    <div class="grid gap-x-12 sm:grid-cols-2 text-[15px] text-text/80">
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
+                                style="color: rgb(var(--primary));">✓</span>
+                            <span class="font-semibold">Más de 15 años de experiencia</span>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
+                                style="color: rgb(var(--primary));">✓</span>
+                            <span class="font-semibold">Tecnología de última generación</span>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
+                                style="color: rgb(var(--primary));">✓</span>
+                            <span class="font-semibold">Equipo altamente especializado</span>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
+                                style="color: rgb(var(--primary));">✓</span>
+                            <span class="font-semibold">Atención personalizada</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
                         <a class="inline-flex h-[64px] w-[300px] rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
                      items-center justify-center"
                             style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
@@ -43,244 +287,11 @@
                                     WhatsApp</span>
                             </span>
                         </a>
-
-                        <!-- Ver servicios -->
-                        <a class="inline-flex h-[64px] w-[150px] rounded-pill border-2 bg-white px-10 transition hover:bg-white/80
-                     items-center justify-center" style="border-color: rgb(var(--primary));" href="#servicios">
-                            <span class="inline-flex w-full items-center justify-center">
-                                <span class="whitespace-nowrap font-semibold" style="color: rgb(var(--primary));">Ver
-                                    servicios</span>
-                            </span>
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-bg"></div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="mx-auto max-w-6xl px-6 pt-28 md:pt-32 pb-36 md:pb-44">
-        <div class="flex flex-col items-center">
-            <!-- Encabezado -->
-            <div class="text-center max-w-3xl mx-auto">
-                <div
-                    class="inline-flex w-[300px] items-center gap-2 rounded-pill bg-primary/10 px-5 py-3 text-sm font-semibold text-primary justify-center">
-                    <span aria-hidden="true">✦</span>
-                    Excelencia en cada tratamiento
-                </div>
-
-                <!-- TIPOGRAFÍA estilo HERO -->
-                <h2 class="mt-8 text-[52px] leading-[1.02] tracking-[-0.02em] font-extrabold
-                 md:text-[64px] md:leading-[0.98]" style="font-weight: 800;">
-                    Nuestros Principales Servicios
-                </h2>
-
-                <p
-                    class="mt-6 text-[18px] md:text-[20px] font-[600] text-text/80 leading-relaxed max-w-[48rem] mx-auto">
-                    Ofrecemos tratamientos dentales de alta calidad con tecnología de vanguardia y un equipo
-                    especializado
-                </p>
-            </div>
-
-            <!-- Espacio blanco -->
-            <div class="h-16 md:h-20"></div>
-
-            <!-- Cards -->
-            <div class="w-full">
-                <div class="grid gap-10 md:gap-12 md:grid-cols-3">
-                    <!-- Card 1 -->
-                    <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
-                        <div class="p-[22px]">
-                            <div class="rounded-[18px] bg-surface px-7 py-7">
-                                <div class="rounded-[16px] overflow-hidden bg-black/5">
-                                    <img src="images/SonrisaLanding.jpg" alt="Diseño de Sonrisa"
-                                        class="h-[190px] w-full object-cover" loading="lazy" />
-                                </div>
-
-                                <h3 class="mt-7 text-[20px] tracking-[-0.01em] text-text" style="font-weight: 800;">
-                                    Diseño de Sonrisa
-                                </h3>
-
-                                <p class="mt-5 text-[15.5px] font-[600] text-text/80 leading-relaxed">
-                                    Transformamos tu sonrisa con técnicas avanzadas de estética dental. Carillas,
-                                    blanqueamiento y contorneado
-                                    personalizado para resultados naturales y duraderos.
-                                </p>
-
-                                <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                    href="#">
-                                    Más información <span aria-hidden="true">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Card 2 -->
-                    <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
-                        <div class="p-[22px]">
-                            <div class="rounded-[18px] bg-surface px-7 py-7">
-                                <div class="rounded-[16px] overflow-hidden bg-black/5">
-                                    <img src="images/OrtodonciaLanding.jpg" alt="Ortodoncia"
-                                        class="h-[190px] w-full object-cover" loading="lazy" />
-                                </div>
-
-                                <h3 class="mt-7 text-[20px] tracking-[-0.01em] text-text" style="font-weight: 800;">
-                                    Ortodoncia
-                                </h3>
-
-                                <p class="mt-5 text-[15.5px] font-[600] text-text/80 leading-relaxed">
-                                    Alineación dental con brackets metálicos, cerámicos o Invisalign. Tratamientos
-                                    personalizados para niños,
-                                    adolescentes y adultos con tecnología 3D.
-                                </p>
-
-                                <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                    href="#">
-                                    Más información <span aria-hidden="true">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Card 3 -->
-                    <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
-                        <div class="p-[22px] gap-y">
-                            <div class="rounded-[18px] bg-surface px-7 py-7">
-                                <div class="rounded-[16px] overflow-hidden bg-black/5">
-                                    <img src="images/ImplanteLanding.jpg" alt="Rehabilitación e Implantología"
-                                        class="h-[190px] w-full object-cover" loading="lazy" />
-                                </div>
-
-                                <h3 class="mt-7 text-[20px] tracking-[-0.01em] text-text" style="font-weight: 800;">
-                                    Rehabilitación e Implantología
-                                </h3>
-
-                                <p class="mt-5 text-[15.5px] font-[600] text-text/80 leading-relaxed">
-                                    Implantes dentales de última generación, coronas, puentes y prótesis. Recupera la
-                                    función y estética de tu
-                                    sonrisa de forma permanente.
-                                </p>
-
-                                <a class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition"
-                                    href="#">
-                                    Más información <span aria-hidden="true">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- Espacio blanco -->
-            <div class="h-16 md:h-20"></div>
-
-            <!-- Botón -->
-            <div class="flex justify-center">
-                <a class="inline-flex h-[56px] rounded-pill border-2 bg-white p-[10px] transition hover:bg-white/80"
-                    style="border-color: rgb(var(--primary));" href="#">
-                    <span class="inline-flex h-full items-center justify-center rounded-pill px-10">
-                        <span class="font-semibold" style="color: rgb(var(--primary));">Ver todos nuestros servicios y
-                            tratamientos</span>
-                        <span class="ml-3" aria-hidden="true" style="color: rgb(var(--primary));">→</span>
-                    </span>
-                </a>
-            </div>
-
-            <div class="h-20 md:h-28"></div>
+            <div class="h-16 md:h-24"></div>
         </div>
     </section>
-
-    <!-- NOSOTROS -->
-    <section id="nosotros" class="mx-auto max-w-6xl px-6 pt-28 md:pt-32 pb-56 md:pb-64">
-        <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
-            <!-- Columna imagen -->
-            <div class="relative pb-24 md:pb-28">
-                <div class="rounded-[26px] overflow-hidden shadow-soft bg-black/5">
-                    <img src="images/Equipo.jpg" alt="Equipo de trabajo" class="w-full h-[520px] object-cover"
-                        loading="lazy" />
-                </div>
-
-                <div class="absolute -bottom-4 md:-bottom-6 right-10 rounded-[18px] p-[10px] shadow-soft"
-                    style="background: rgb(var(--primary));">
-                    <div class="rounded-[16px] px-8 py-6 text-white" style="background: rgb(var(--primary));">
-                        <div class="flex items-center gap-4">
-                            <div class="badge-icon">
-                                <svg class="badge-smile" viewBox="0 0 56 56" aria-hidden="true">
-                                    <circle class="badge-smile__arc" cx="28" cy="28" r="14"></circle>
-                                </svg>
-                            </div>
-                            <div class="leading-tight">
-                                <div class="text-[26px] font-extrabold">10,000+</div>
-                                <div class="text-[13px] opacity-95 font-semibold">Sonrisas transformadas</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Columna contenido (tipografía como HERO) -->
-            <div class="flex flex-col gap-8 md:gap-10">
-                <div
-                    class="inline-flex h-[50px] w-[150px] items-center gap-2 rounded-pill bg-primary/10 px-5 py-3 text-sm font-semibold text-primary justify-center">
-                    Sobre Nosotros
-                </div>
-
-                <h2 class="text-[56px] leading-[1.02] tracking-[-0.02em]
-                 md:text-[64px] md:leading-[0.98]" style="font-weight: 800;">
-                    Excelencia en <span style="color: rgb(var(--primary));">odontología</span><br />
-                    <span style="color: rgb(var(--primary));">especializada</span>
-                </h2>
-
-                <p class="text-[18px] md:text-[20px] font-[600] text-text/80 leading-relaxed max-w-[42rem]">
-                    Ofrecemos a nuestros pacientes el mejor y más calificado grupo de profesionales especializados.
-                    Nuestra misión es
-                    brindar tratamientos de alta calidad en un ambiente cálido y acogedor, utilizando la tecnología más
-                    avanzada del
-                    mercado.
-                </p>
-
-                <div class="grid gap-x-12 sm:grid-cols-2 text-[15px] text-text/80">
-                    <div class="flex items-center gap-3">
-                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
-                            style="color: rgb(var(--primary));">✓</span>
-                        <span class="font-semibold">Más de 15 años de experiencia</span>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
-                            style="color: rgb(var(--primary));">✓</span>
-                        <span class="font-semibold">Tecnología de última generación</span>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
-                            style="color: rgb(var(--primary));">✓</span>
-                        <span class="font-semibold">Equipo altamente especializado</span>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/15"
-                            style="color: rgb(var(--primary));">✓</span>
-                        <span class="font-semibold">Atención personalizada</span>
-                    </div>
-                </div>
-
-                <div class="pt-2">
-                    <a class="inline-flex h-[64px] w-[300px] rounded-pill px-10 shadow-soft transition hover:brightness-[1.03]
-                   items-center justify-center"
-                        style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
-                        [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
-                        <span class="inline-flex w-full items-center justify-center gap-3">
-                            <img src="icons/whatsapp.png" class="h-6 w-6 block" alt="WhatsApp" />
-                            <span class="whitespace-nowrap font-semibold text-white">Agenda tu cita por WhatsApp</span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="h-16 md:h-24"></div>
 </main>

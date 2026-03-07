@@ -80,7 +80,7 @@ export class Servicios {
     {
       id: 'general',
       title: 'Odontología General',
-      icon: 'icons/stethoscope.svg',
+      icon: 'icons/stethoscope.png',
       excerpt: 'Base del cuidado bucal: prevención, diagnóstico y limpiezas profesionales.',
       detailsText:
         'Evaluación general, profilaxis, planes preventivos y orientación personalizada para mantener tu salud oral.',

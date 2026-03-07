@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class WhatsappService {
-    private readonly phoneE164Digits = '573206793183';
+    private readonly phoneE164Digits = '573206984842';
 
     private readonly defaultMessage = 'Hola, quisiera agendar una cita odontológica.';
 
