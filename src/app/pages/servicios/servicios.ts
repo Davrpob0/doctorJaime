@@ -40,88 +40,82 @@ export class Servicios {
 
   // Ajusta contenido libremente
   heroCards: ServiceCard[] = [
-
-    {
-      id: 'implanto',
-      title: 'Rehabilitación e Implantología',
-      img: 'images/ImplanteLanding.jpg',
-      excerpt:
-        'Implantes dentales de última generación, coronas, puentes y prótesis. Recupera la función y estética de tu sonrisa de forma permanente.',
-      detailsTitle: '¿Qué incluye?',
-      detailsText:
-        'Valoración clínica, planificación del caso, rehabilitación protésica y seguimiento post-tratamiento para asegurar resultados estables.',
-      benefits: ['Función masticatoria', 'Estabilidad', 'Estética'],
-    },
     {
       id: 'diseno',
       title: 'Diseño de Sonrisa',
       img: 'images/SonrisaLanding.jpg',
       tag: 'Destacado',
       excerpt:
-        'Transformamos tu sonrisa con técnicas avanzadas de estética dental. Carillas, blanqueamiento y contorneado personalizado para resultados naturales y duraderos.',
-      detailsTitle: 'Es un proceso integral que puede incluir',
+        'Plan personalizado que armoniza color, forma, tamaño y posición dental con tus facciones, combinando tratamientos estéticos y funcionales.',
+      detailsTitle: '¿Qué incluye?',
       detailsText:
-        'blanqueamiento, carillas y ortodoncia. Utilizamos la técnica de Mock-up (Planificación Digital) para que puedas visualizar los resultados antes de iniciar el tratamiento.',
-      benefits: ['Mayor confianza', 'Estética natural', 'Mordida funcional'],
+        'Evaluación clínica y estética, fotos/radiografías/escaneo 3D y planificación digital (Mock-up) para visualizar el resultado antes de iniciar. Puede integrar blanqueamiento, carillas (resina o porcelana), ortodoncia, contorneado dental y manejo del contorno gingival según el caso.',
+      benefits: ['Armonía facial', 'Estética natural', 'Mejor función'],
     },
     {
       id: 'orto',
       title: 'Ortodoncia',
       img: 'images/OrtodonciaLanding.jpg',
       excerpt:
-        'Alineación dental con brackets metálicos, cerámicos o Invisalign. Tratamientos personalizados para niños, adolescentes y adultos con tecnología 3D.',
-      detailsTitle: 'Opciones',
+        'Especialidad que corrige alineación dental y mordida (maloclusión) para mejorar estética, salud y función, con brackets o alineadores.',
+      detailsTitle: '¿Qué corrige?',
       detailsText:
-        'Brackets metálicos, cerámicos o alineadores. Plan de control y ajustes periódicos según objetivos del caso.',
-      benefits: ['Alineación', 'Mejor oclusión', 'Sonrisa armónica'],
+        'Apiñamiento, diastemas (espacios), problemas de mordida y dientes protruidos. Opciones de tratamiento: brackets metálicos, cerámicos o alineadores transparentes. Incluye controles y ajustes periódicos según el objetivo del caso.',
+      benefits: ['Alineación', 'Mejor oclusión', 'Higiene más fácil'],
+    },
+    {
+      id: 'implanto',
+      title: 'Rehabilitación e Implantología',
+      img: 'images/ImplanteLanding.jpg',
+      excerpt:
+        'Recupera piezas perdidas con implantes y rehabilitación protésica (coronas/puentes/prótesis), devolviendo estética, masticación y comodidad.',
+      detailsTitle: '¿Cómo funciona?',
+      detailsText:
+        'La implantología coloca implantes de titanio que sustituyen la raíz y se integran al hueso (osteointegración). La rehabilitación oral completa restaura función y estética con prótesis fijas o removibles sobre implantes, ajustando mordida y estabilidad.',
+      benefits: ['Función masticatoria', 'Estabilidad', 'Resultados duraderos'],
     },
   ];
 
   specialties: ServiceCard[] = [
     {
-      id: 'general',
-      title: 'Odontología General',
-      icon: 'icons/stethoscope.png',
-      excerpt: 'Base del cuidado bucal: prevención, diagnóstico y limpiezas profesionales.',
-      detailsText:
-        'Evaluación general, profilaxis, planes preventivos y orientación personalizada para mantener tu salud oral.',
-      benefits: ['Prevención', 'Diagnóstico', 'Limpiezas'],
-    },
-    {
       id: 'blanqueamiento',
       title: 'Blanqueamiento Dental',
       icon: 'icons/brillo.png',
-      excerpt: 'Aclara el tono de tus dientes para una sonrisa brillante.',
+      excerpt:
+        'Tratamiento estético para aclarar el tono dental y eliminar manchas superficiales y profundas.',
       detailsText:
-        'Tratamientos clínicos y/o supervisados. Indicaciones según sensibilidad y tono objetivo.',
-      benefits: ['Más brillo', 'Tono uniforme', 'Confianza'],
+        'Se realiza con geles blanqueadores (peróxido) en consultorio (resultados más rápidos) o en casa con férulas personalizadas y supervisión profesional, según sensibilidad y objetivo.',
+      benefits: ['Tono más claro', 'Sonrisa brillante', 'Resultados controlados'],
     },
     {
       id: 'endo',
-      title: 'Endodoncia (Tratamiento de Conducto)',
+      title: 'Endodoncia',
       icon: 'icons/heart.png',
-      excerpt: 'Salvamos tus dientes tratando la pulpa dental infectada.',
+      excerpt:
+        'Tratamiento de conducto para salvar dientes con pulpa inflamada o infectada y evitar la extracción.',
       detailsText:
-        'Control del dolor, limpieza del conducto, obturación y restauración según el caso.',
-      benefits: ['Alivio', 'Conservación', 'Función'],
+        'Acceso al diente, limpieza y desinfección de conductos, sellado con material biocompatible y restauración final (resina o corona) para proteger la pieza.',
+      benefits: ['Alivio del dolor', 'Conservación dental', 'Evita extracción'],
     },
     {
       id: 'perio',
       title: 'Periodoncia',
       icon: 'icons/shield.png',
-      excerpt: 'Cuidado de las encías y tejidos de soporte.',
+      excerpt:
+        'Prevención y tratamiento de enfermedades de encías y tejidos de soporte (gingivitis y periodontitis).',
       detailsText:
-        'Diagnóstico periodontal, control de placa, raspado y alisado radicular cuando aplica.',
-      benefits: ['Encías sanas', 'Soporte dental', 'Prevención'],
+        'Incluye diagnóstico periodontal, higiene profesional profunda, raspado y alisado radicular (curetaje) y, en casos avanzados, procedimientos quirúrgicos o injertos para controlar infección y preservar hueso.',
+      benefits: ['Encías sanas', 'Previene pérdida dental', 'Control de infección'],
     },
     {
       id: 'cirugia',
       title: 'Cirugía Oral',
       icon: 'icons/scissors.png',
-      excerpt: 'Procedimientos quirúrgicos especializados en boca y mandíbula.',
+      excerpt:
+        'Procedimientos quirúrgicos en boca y mandíbula realizados por especialista, según valoración clínica.',
       detailsText:
-        'Extracciones complejas, cirugías menores y procedimientos indicados por valoración clínica.',
-      benefits: ['Seguridad', 'Recuperación', 'Control'],
+        'Extracciones complejas, cirugías menores y procedimientos indicados para resolver condiciones que requieren intervención quirúrgica, con enfoque en seguridad y recuperación.',
+      benefits: ['Seguridad clínica', 'Recuperación guiada', 'Resolución efectiva'],
     },
   ];
 }
