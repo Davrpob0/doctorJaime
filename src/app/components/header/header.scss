@@ -1,4 +1,125 @@
-/* Si no tienes definido rounded-pill en Tailwind, esto garantiza el pill */
 :host {
   display: block;
+}
+
+.rounded-pill {
+  border-radius: 9999px;
+}
+
+/* Por defecto: desktop visible, mobile oculto */
+.desktop-header {
+  display: block;
+}
+
+.mobile-header {
+  display: none;
+}
+
+/* MOBILE */
+.mobile-header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-header__bar {
+  min-height: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.mobile-header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mobile-header__logo img {
+  height: 4.5rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobile-header__menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  background: transparent;
+  color: rgb(var(--text));
+  cursor: pointer;
+}
+
+.mobile-header__menu-btn svg {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.mobile-header__panel {
+  padding: 0 1.25rem 1.25rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mobile-header__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-header__nav a {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.85rem 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: rgb(var(--text));
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: color 0.2s ease;
+}
+
+.mobile-header__nav a:hover {
+  color: rgb(var(--primary));
+}
+
+.mobile-header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3rem;
+  margin-top: 1rem;
+  border-radius: 9999px;
+  background: rgb(var(--primary));
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Breakpoint real de mobile */
+@media (max-width: 767px) {
+  .desktop-header {
+    display: none;
+  }
+
+  .mobile-header {
+    display: block;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-header__bar {
+    min-height: 6.75rem;
+    padding: 1rem 1rem 0.9rem;
+  }
+
+  .mobile-header__logo img {
+    height: 3.9rem;
+  }
 }

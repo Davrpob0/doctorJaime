@@ -12,7 +12,5 @@ import { WhatsappService } from '../../services/whatsapp.service';
 export class Nosotros {
   private readonly whatsapp = inject(WhatsappService);
   whatsappHref = this.whatsapp.buildUrl();
-
-  // Si luego quieres disparar descarga real, cambia a tu ruta final
   financialPdfHref = '/docs/estados-financieros.pdf';
 }

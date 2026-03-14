@@ -1,0 +1,20 @@
+.hero-nosotros-bg {
+  background-size: auto 115%;
+  background-repeat: no-repeat;
+  background-position: 50% -78%;
+}
+
+.hero-nosotros-overlay {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 767px) {
+  .hero-nosotros-bg {
+    background-size: auto 120%;
+    background-position: 38% -70%;
+  }
+
+  .hero-nosotros-overlay {
+    background: rgba(255, 255, 255, 0.62);
+  }
+}
