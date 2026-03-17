@@ -106,14 +106,14 @@
   z-index: 10;
 }
 
-/* ✅ Difuminado inferior hacia el fondo blanco (bg2/surface) */
+/* Difuminado inferior */
 .ba::after {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 80px; /* más alto = más perceptible */
+  height: 80px;
   pointer-events: none;
   z-index: 6;
   background: linear-gradient(
@@ -131,9 +131,288 @@
   margin-top: 2px;
 }
 
+:host {
+  display: block;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (min-width: 768px) {
+  /* HERO */
+  main {
+    padding-top: 6rem;
+  }
+
+  main > section:first-of-type > .max-w-6xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 5rem;
+  }
+
+  main > section:first-of-type .h-20 {
+    height: 6rem;
+  }
+
+  main > section:first-of-type .inline-flex.rounded-pill.h-\[25px\].w-\[250px\] {
+    width: auto;
+    min-width: 240px;
+    max-width: 100%;
+    min-height: 46px;
+    height: auto;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  main > section:first-of-type h1 {
+    margin-top: 2rem;
+    font-size: 3.4rem;
+    line-height: 1.04;
+  }
+
+  main > section:first-of-type p {
+    margin-top: 1.3rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 38rem;
+  }
+
+  /* CONTENEDORES */
+  section.bg-bg2 > .max-w-7xl,
+  section.bg-bg > .max-w-6xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* FILTROS */
+  section.bg-bg2 .flex.flex-wrap.items-center.justify-center.gap-4 {
+    gap: 0.85rem;
+  }
+
+  section.bg-bg2 .flex.flex-wrap.items-center.justify-center.gap-4 > button {
+    min-width: 170px;
+    height: 44px;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  /* GRID DE CARDS */
+  section.bg-bg2 .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+    gap: 2rem;
+  }
+
+  /* CARD CONTENIDO */
+  section.bg-bg2 article > .p-\[15px\] {
+    padding: 1rem;
+  }
+
+  section.bg-bg2 article .rounded-\[20px\].bg-surface.px-8.py-9 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  section.bg-bg2 article h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.18 !important;
+  }
+
+  section.bg-bg2 article p.text-\[15\.5px\],
+  section.bg-bg2 article p.text-\[15px\],
+  section.bg-bg2 article .text-\[15px\],
+  section.bg-bg2 article .text-\[15\.5px\] {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Caja de resultado */
+  section.bg-bg2 article .rounded-\[14px\].h-\[55px\].w-\[360px\] {
+    width: 100% !important;
+    max-width: 360px;
+    min-height: 55px;
+    height: auto !important;
+    padding: 0.85rem 1rem;
+  }
+
+  section.bg-bg2 article .pt-8.border-t {
+    padding-top: 1.5rem;
+  }
+
+  /* BEFORE / AFTER */
+  .ba {
+    height: 260px;
+  }
+
+  .ba__badge,
+  .ba__chip {
+    font-size: 12px;
+  }
+
+  .ba__knob {
+    height: 42px;
+    width: 42px;
+    font-size: 1rem;
+  }
+
+  /* CTA FINAL */
+  section.bg-bg h2.text-\[42px\] {
+    font-size: 2.5rem !important;
+    line-height: 1.08 !important;
+  }
+
+  section.bg-bg p.text-\[16\.5px\] {
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+  }
+
+  section.bg-bg button.w-\[420px\] {
+    width: 100% !important;
+    max-width: 420px;
+    height: 56px;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media (min-width: 1024px) {
+  /* HERO */
+  main {
+    padding-top: 0rem;
+  }
+
+  main > section:first-of-type > .max-w-6xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  main > section:first-of-type .h-20 {
+    height: 7rem;
+  }
+
+  main > section:first-of-type .inline-flex.rounded-pill.h-\[25px\].w-\[250px\] {
+    min-width: 250px;
+    min-height: 48px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 14px;
+  }
+
+  main > section:first-of-type h1 {
+    margin-top: 2.25rem;
+    font-size: 4rem;
+    line-height: 1.02;
+  }
+
+  main > section:first-of-type p {
+    margin-top: 1.45rem;
+    font-size: 1.12rem;
+    line-height: 1.75;
+    max-width: 42rem;
+  }
+
+  /* CONTENEDORES */
+  section.bg-bg2 > .max-w-7xl,
+  section.bg-bg > .max-w-6xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* FILTROS */
+  section.bg-bg2 .flex.flex-wrap.items-center.justify-center.gap-4 {
+    gap: 1rem;
+  }
+
+  section.bg-bg2 .flex.flex-wrap.items-center.justify-center.gap-4 > button {
+    min-width: 180px;
+    height: 46px;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    font-size: 14px;
+  }
+
+  /* GRID */
+  section.bg-bg2 .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+    gap: 2.5rem;
+  }
+
+  /* CARDS */
+  section.bg-bg2 article > .p-\[15px\] {
+    padding: 1rem;
+  }
+
+  section.bg-bg2 article .rounded-\[20px\].bg-surface.px-8.py-9 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  section.bg-bg2 article h3 {
+    font-size: 1.6rem !important;
+    line-height: 1.18 !important;
+  }
+
+  section.bg-bg2 article p.text-\[15\.5px\],
+  section.bg-bg2 article p.text-\[15px\],
+  section.bg-bg2 article .text-\[15px\],
+  section.bg-bg2 article .text-\[15\.5px\] {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  section.bg-bg2 article .rounded-\[14px\].h-\[55px\].w-\[360px\] {
+    max-width: 360px;
+    min-height: 55px;
+    padding: 0.9rem 1rem;
+  }
+
+  section.bg-bg2 article .pt-8.border-t {
+    padding-top: 1.75rem;
+  }
+
+  /* BEFORE / AFTER */
+  .ba {
+    height: 300px;
+  }
+
+  .ba__badge,
+  .ba__chip {
+    font-size: 12px;
+  }
+
+  .ba__knob {
+    height: 44px;
+    width: 44px;
+  }
+
+  /* CTA */
+  section.bg-bg h2.text-\[42px\] {
+    font-size: 3rem !important;
+    line-height: 1.05 !important;
+  }
+
+  section.bg-bg p.text-\[16\.5px\] {
+    font-size: 1.1rem !important;
+    line-height: 1.75 !important;
+  }
+
+  section.bg-bg button.w-\[420px\] {
+    width: 420px !important;
+    max-width: 420px;
+  }
+}
+
 /* =========================
    MOBILE ONLY
-   No altera desktop
 ========================= */
 @media (max-width: 767px) {
   /* HERO: baja un poco más el contenido */

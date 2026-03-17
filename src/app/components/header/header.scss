@@ -15,7 +15,7 @@
   display: none;
 }
 
-/* MOBILE */
+/* MOBILE / TABLET HEADER */
 .mobile-header {
   width: 100%;
   background: rgba(255, 255, 255, 0.96);
@@ -102,8 +102,8 @@
   text-decoration: none;
 }
 
-/* Breakpoint real de mobile */
-@media (max-width: 767px) {
+/* MOBILE + TABLET */
+@media (max-width: 1023px) {
   .desktop-header {
     display: none;
   }

@@ -19,13 +19,22 @@
   padding-bottom: 5.5rem;
 }
 
+.hero-shell {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
 .hero-banner {
   position: relative;
   width: 100%;
   max-width: 1120px;
-  height: 220px;
+  height: clamp(200px, 38vw, 420px);
+  max-height: 420px;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.14);
@@ -36,6 +45,7 @@
 
 .hero-copy {
   padding-top: 0.5rem;
+  max-width: 42rem;
 }
 
 .hero-actions {
@@ -146,7 +156,6 @@
   }
 
   .hero-banner {
-    height: 320px;
     margin-top: 3rem;
     margin-bottom: 3rem;
     border-radius: 32px;
@@ -168,7 +177,6 @@
   }
 
   .hero-banner {
-    height: 420px;
     margin-top: 3.5rem;
     margin-bottom: 3.25rem;
     border-radius: 36px;
@@ -183,6 +191,12 @@
   }
 }
 
+@media (max-width: 1023px) {
+  .hero-shell {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 767px) {
   .hero-inner {
     padding-top: 2.25rem;
@@ -190,7 +204,7 @@
   }
 
   .hero-banner {
-    margin-top: 1.5rem;
+    margin-top: 6.5rem;
     margin-bottom: 2rem;
   }
 
@@ -216,6 +230,7 @@
 @media (max-width: 640px) {
   .hero-banner {
     height: 200px;
+    max-height: 200px;
     border-radius: 24px;
   }
 }

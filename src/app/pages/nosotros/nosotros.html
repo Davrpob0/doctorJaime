@@ -1,56 +1,53 @@
 <main class="text-text pt-28">
   <!-- HERO / QUIÉNES SOMOS (bg) -->
-  <section id="inicio" class="bg-bg relative min-h-[85vh] md:min-h-[90vh]">
-    <!-- Fondo -->
-    <div class="absolute inset-0">
-      <div
-        class="hero-nosotros-bg h-full w-full"
-        style="background-image: url('images/nosotros-hero.jpg')"
-      ></div>
-
-      <div class="absolute inset-0 hero-nosotros-overlay"></div>
-      <div class="absolute inset-0 bg-linear-to-b from-white/30 via-white/30 to-bg"></div>
-
-      <!-- “niebla” inferior -->
-      <div
-        class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-bg"
-      ></div>
+  <section id="inicio" class="hero-section bg-bg section-fade to-bg2 relative min-h-[85vh] md:min-h-[90vh]">
+    <!-- Fondo suave -->
+    <div class="absolute inset-0 fade-bg pointer-events-none hero-bg-layer">
+      <div class="absolute inset-0 bg-white/58 hero-bg-soft"></div>
+      <div class="absolute inset-0 bg-linear-to-b from-white/20 via-white/10 to-bg hero-bg-gradient"></div>
     </div>
 
     <!-- Contenido -->
-    <div
-      class="relative mx-auto max-w-6xl px-4 sm:px-6 min-h-[85vh] md:min-h-[90vh] grid items-center"
-    >
-      <div class="py-14 md:py-20">
-        <div class="max-w-2xl translate-x-0 md:translate-x-14 lg:translate-x-20">
-          <div
-            class="inline-flex items-center rounded-pill text-[12px] sm:text-sm font-semibold"
-            style="
-              padding: 12px 22px;
-              background: color-mix(in srgb, rgb(var(--primary)) 16%, white);
-              color: rgb(var(--primary-600));
-              line-height: 1;
-            "
-          >
-            Sobre Nosotros
+    <div class="fade-content relative z-10">
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 min-h-[85vh] md:min-h-[90vh] grid items-center">
+        <div class="hero-inner">
+          <div class="hero-shell">
+            <!-- Banner fijo -->
+            <div class="hero-banner hero-banner--single">
+              <img class="hero-banner__image" src="images/nosotros-hero.jpg" alt="Equipo y clínica" loading="eager" />
+              <div class="hero-banner__overlay"></div>
+            </div>
+
+            <!-- Texto -->
+            <div class="hero-copy max-w-2xl">
+              <div class="inline-flex items-center rounded-pill text-[12px] sm:text-sm font-semibold" style="
+                padding: 12px 22px;
+                background: color-mix(in srgb, rgb(var(--primary)) 16%, white);
+                color: rgb(var(--primary-600));
+                line-height: 1;
+              ">
+                Sobre Nosotros
+              </div>
+
+              <h1
+                class="mt-[16px] text-[40px] sm:text-[48px] leading-[1.02] tracking-[-0.02em] md:mt-[56px] md:text-[76px] md:leading-[0.98] lg:text-[84px]"
+                style="font-weight: 800">
+                ¿Quiénes <span style="color: rgb(var(--primary))">somos</span>?
+              </h1>
+
+              <p
+                class="mt-[18px] text-[16px] sm:text-[17px] md:text-[19px] font-[600] text-text/80 leading-relaxed max-w-[42rem]">
+                Somos un centro odontológico especializado, con un enfoque netamente estético; contamos
+                con dos sedes ubicadas en la ciudad de Medellín. En nuestra clínica ofrecemos a nuestros
+                pacientes el mejor y más calificado grupo de profesionales especializados.
+              </p>
+            </div>
           </div>
-
-          <h1
-            class="mt-[16px] text-[40px] sm:text-[48px] leading-[1.02] tracking-[-0.02em] md:mt-[56px] md:text-[76px] md:leading-[0.98] lg:text-[84px]"
-            style="font-weight: 800"
-          >
-            ¿Quiénes <span style="color: rgb(var(--primary))">somos</span>?
-          </h1>
-
-          <p
-            class="mt-[18px] text-[16px] sm:text-[17px] md:text-[19px] font-[600] text-text/80 leading-relaxed max-w-[42rem]"
-          >
-            Somos un centro odontológico especializado, con un enfoque netamente estético; contamos
-            con dos sedes ubicadas en la ciudad de Medellín. En nuestra clínica ofrecemos a nuestros
-            pacientes el mejor y más calificado grupo de profesionales especializados.
-          </p>
         </div>
       </div>
+
+      <!-- transición inferior -->
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-bg2"></div>
     </div>
   </section>
 
@@ -58,28 +55,21 @@
   <section id="diferencia" class="bg-bg2">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 section-content-pad pb-[48px] md:pb-[72px]">
       <div class="flex flex-col items-center text-center">
-        <div
-          class="inline-flex items-center rounded-pill text-[12px] sm:text-sm font-semibold"
-          style="
+        <div class="inline-flex items-center rounded-pill text-[12px] sm:text-sm font-semibold" style="
             padding: 12px 22px;
             background: color-mix(in srgb, rgb(var(--primary)) 16%, white);
             color: rgb(var(--primary-600));
             line-height: 1;
-          "
-        >
+          ">
           Lo que nos distingue
         </div>
 
-        <h2
-          class="mt-8 text-[32px] sm:text-[38px] md:text-[52px] leading-[1.05] tracking-tight"
-          style="font-weight: 800"
-        >
+        <h2 class="mt-8 text-[32px] sm:text-[38px] md:text-[52px] leading-[1.05] tracking-tight"
+          style="font-weight: 800">
           Nuestra Diferencia
         </h2>
 
-        <p
-          class="mt-5 md:mt-7 max-w-3xl text-[16px] sm:text-[17px] md:text-[19px] leading-relaxed text-text/70"
-        >
+        <p class="mt-5 md:mt-7 max-w-3xl text-[16px] sm:text-[17px] md:text-[19px] leading-relaxed text-text/70">
           Centramos nuestra ventaja competitiva en la variedad de nuestros servicios, tecnología de
           punta y rapidez en la atención de nuestros pacientes. Contamos con un recurso humano
           altamente comprometido con la calidad del servicio.
@@ -92,10 +82,7 @@
   <section id="filosofia" class="bg-bg">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 section-content-pad pb-[48px] md:pb-[72px]">
       <div class="flex flex-col items-center text-center">
-        <h2
-          class="text-[32px] sm:text-[38px] md:text-[52px] leading-[1.05] tracking-tight"
-          style="font-weight: 800"
-        >
+        <h2 class="text-[32px] sm:text-[38px] md:text-[52px] leading-[1.05] tracking-tight" style="font-weight: 800">
           Nuestra Filosofía
         </h2>
 
@@ -109,57 +96,55 @@
       <div class="grid gap-6 md:gap-12 md:grid-cols-2">
         <!-- Misión -->
         <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
-          <div class="p-4 sm:p-[22px]">
-            <div class="rounded-[18px] bg-surface px-5 py-7 sm:px-8 sm:py-10 relative">
-              <div
-                class="absolute -top-10 -right-10 h-28 w-28 rounded-full"
-                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-              ></div>
+          <div class="p-[22px]">
+            <div
+              class="rounded-[18px] bg-surface px-7 py-7 sm:px-8 sm:py-8 md:px-9 md:py-9 relative min-h-[180px] flex flex-col">
+              <div class="absolute -top-10 -right-10 h-28 w-28 rounded-full"
+                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"></div>
 
-              <div
-                class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
-                style="background: rgb(var(--primary)); color: white"
-              >
-                <span aria-hidden="true" class="text-[18px] font-bold">◎</span>
+              <div class="relative z-10">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
+                  style="background: rgb(var(--primary)); color: white">
+                  <span aria-hidden="true" class="text-[18px] font-bold">◎</span>
+                </div>
+
+                <h3 class="mt-6 text-[22px] sm:text-[26px] tracking-tight text-text" style="font-weight: 800">
+                  Misión
+                </h3>
+
+                <p class="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-text/60">
+                  Contar con un equipo humano capacitado y ético, que permita crear una sonrisa de
+                  satisfacción a nuestros pacientes a través de la solución a sus necesidades
+                  puntuales, con calidad, conocimiento, respeto y trato amable.
+                </p>
               </div>
-
-              <h3 class="mt-6 text-[22px] sm:text-[26px] tracking-tight" style="font-weight: 800">
-                Misión
-              </h3>
-
-              <p class="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-text/60">
-                Contar con un equipo humano capacitado y ético, que permita crear una sonrisa de
-                satisfacción a nuestros pacientes a través de la solución a sus necesidades
-                puntuales, con calidad, conocimiento, respeto y trato amable.
-              </p>
             </div>
           </div>
         </article>
 
         <!-- Visión -->
         <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
-          <div class="p-4 sm:p-[22px]">
-            <div class="rounded-[18px] bg-surface px-5 py-7 sm:px-8 sm:py-10 relative">
-              <div
-                class="absolute -top-10 -right-10 h-28 w-28 rounded-full"
-                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-              ></div>
+          <div class="p-[22px]">
+            <div
+              class="rounded-[18px] bg-surface px-7 py-7 sm:px-8 sm:py-8 md:px-9 md:py-9 relative min-h-[180px] flex flex-col">
+              <div class="absolute -top-10 -right-10 h-28 w-28 rounded-full"
+                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"></div>
 
-              <div
-                class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
-                style="background: rgb(var(--primary)); color: white"
-              >
-                <span aria-hidden="true" class="text-[18px] font-bold">◉</span>
+              <div class="relative z-10">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
+                  style="background: rgb(var(--primary)); color: white">
+                  <span aria-hidden="true" class="text-[18px] font-bold">◉</span>
+                </div>
+
+                <h3 class="mt-6 text-[22px] sm:text-[26px] tracking-tight text-text" style="font-weight: 800">
+                  Visión
+                </h3>
+
+                <p class="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-text/60">
+                  Ser la primera opción para nuestros pacientes con un excelente modelo de calidad en
+                  atención y servicio.
+                </p>
               </div>
-
-              <h3 class="mt-6 text-[22px] sm:text-[26px] tracking-tight" style="font-weight: 800">
-                Visión
-              </h3>
-
-              <p class="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-text/60">
-                Ser la primera opción para nuestros pacientes con un excelente modelo de calidad en
-                atención y servicio.
-              </p>
             </div>
           </div>
         </article>
@@ -171,22 +156,17 @@
   <section id="valores" class="bg-bg2">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 section-content-pad pb-[48px] md:pb-[72px]">
       <div class="flex flex-col items-center text-center">
-        <div
-          class="inline-flex items-center rounded-pill text-[12px] sm:text-sm font-semibold"
-          style="
-            padding: 12px 22px;
-            background: color-mix(in srgb, rgb(var(--primary)) 16%, white);
-            color: rgb(var(--primary-600));
-            line-height: 1;
-          "
-        >
+        <div class="inline-flex items-center rounded-pill text-[12px] sm:text-sm font-semibold" style="
+          padding: 12px 22px;
+          background: color-mix(in srgb, rgb(var(--primary)) 16%, white);
+          color: rgb(var(--primary-600));
+          line-height: 1;
+        ">
           Lo que nos define
         </div>
 
-        <h2
-          class="mt-8 text-[32px] sm:text-[38px] md:text-[52px] leading-[1.05] tracking-tight"
-          style="font-weight: 800"
-        >
+        <h2 class="mt-8 text-[32px] sm:text-[38px] md:text-[52px] leading-[1.05] tracking-tight"
+          style="font-weight: 800">
           Nuestros Valores
         </h2>
       </div>
@@ -195,66 +175,23 @@
 
       <!-- Grid 3 arriba -->
       <div class="grid gap-6 md:gap-12 md:grid-cols-3">
-        <!-- Pacientes Primero -->
-        <article class="rounded-[22px] bg-bg2 border-2 border-black shadow-soft overflow-hidden">
-          <div class="p-4 sm:p-[22px]">
-            <div class="rounded-[18px] bg-bg2 px-5 py-7 sm:px-8 sm:py-10 relative">
-              <div
-                class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
-                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-              >
-                <span style="color: rgb(var(--primary)); font-weight: 800">❤</span>
+        <article *ngFor="let valor of valoresTop"
+          class="rounded-[22px] bg-bg2 border-2 border-black shadow-soft overflow-hidden">
+          <div class="p-[22px]">
+            <div class="rounded-[18px] bg-bg2 px-7 py-7 sm:px-8 sm:py-8 md:px-9 md:py-9 min-h-[150px] flex flex-col">
+              <div class="inline-flex h-12 w-12 items-center justify-center rounded-[14px] shrink-0"
+                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)">
+                <span style="color: rgb(var(--primary)); font-weight: 800">
+                  {{ valor.icono }}
+                </span>
               </div>
 
-              <h3 class="mt-6 text-[18px] tracking-tight" style="font-weight: 800">
-                Pacientes Primero
+              <h3 class="mt-6 text-[18px] tracking-tight text-text" style="font-weight: 800">
+                {{ valor.titulo }}
               </h3>
 
               <p class="mt-4 text-[15px] sm:text-[15.5px] leading-relaxed text-text/60">
-                El corazón de nuestra institución son nuestros pacientes. Ellos garantizan nuestra
-                estabilidad y desarrollo.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Compromiso -->
-        <article class="rounded-[22px] bg-bg2 border-2 border-black shadow-soft overflow-hidden">
-          <div class="p-4 sm:p-[22px]">
-            <div class="rounded-[18px] bg-bg2 px-5 py-7 sm:px-8 sm:py-10 relative">
-              <div
-                class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
-                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-              >
-                <span style="color: rgb(var(--primary)); font-weight: 800">⛨</span>
-              </div>
-
-              <h3 class="mt-6 text-[18px] tracking-tight" style="font-weight: 800">Compromiso</h3>
-
-              <p class="mt-4 text-[15px] sm:text-[15.5px] leading-relaxed text-text/60">
-                Seguridad, oportunidad, confiabilidad y sensibilidad en nuestro servicio son nuestra
-                razón de ser.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Innovación -->
-        <article class="rounded-[22px] bg-bg2 border-2 border-black shadow-soft overflow-hidden">
-          <div class="p-4 sm:p-[22px]">
-            <div class="rounded-[18px] bg-bg2 px-5 py-7 sm:px-8 sm:py-10 relative">
-              <div
-                class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
-                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-              >
-                <span style="color: rgb(var(--primary)); font-weight: 800">💡</span>
-              </div>
-
-              <h3 class="mt-6 text-[18px] tracking-tight" style="font-weight: 800">Innovación</h3>
-
-              <p class="mt-4 text-[15px] sm:text-[15.5px] leading-relaxed text-text/60">
-                Cambio e innovación: enfrentamos activamente los retos, nos adaptamos y aprovechamos
-                las oportunidades del entorno.
+                {{ valor.descripcion }}
               </p>
             </div>
           </div>
@@ -263,46 +200,25 @@
 
       <div class="h-6 md:h-12"></div>
 
-      <!-- Grid 2 abajo centrado -->
+      <!-- Grid 2 abajo -->
       <div class="grid gap-6 md:gap-12 md:grid-cols-2 md:max-w-4xl md:mx-auto">
-        <!-- Desarrollo Humano -->
-        <article class="rounded-[22px] bg-bg2 border-2 border-black shadow-soft overflow-hidden">
-          <div class="p-4 sm:p-[22px]">
-            <div class="rounded-[18px] bg-bg2 px-5 py-7 sm:px-8 sm:py-10 relative">
-              <div
-                class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
-                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-              >
-                <span style="color: rgb(var(--primary)); font-weight: 800">👥</span>
+        <article *ngFor="let valor of valoresBottom"
+          class="rounded-[22px] bg-bg2 border-2 border-black shadow-soft overflow-hidden">
+          <div class="p-[22px]">
+            <div class="rounded-[18px] bg-bg2 px-7 py-7 sm:px-8 sm:py-8 md:px-9 md:py-9 min-h-[100px] flex flex-col">
+              <div class="inline-flex h-12 w-12 items-center justify-center rounded-[14px] shrink-0"
+                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)">
+                <span style="color: rgb(var(--primary)); font-weight: 800">
+                  {{ valor.icono }}
+                </span>
               </div>
 
-              <h3 class="mt-6 text-[18px] tracking-tight" style="font-weight: 800">
-                Desarrollo Humano
+              <h3 class="mt-6 text-[18px] tracking-tight text-text" style="font-weight: 800">
+                {{ valor.titulo }}
               </h3>
 
               <p class="mt-4 text-[15px] sm:text-[15.5px] leading-relaxed text-text/60">
-                Promovemos la formación, el crecimiento personal y profesional de nuestros
-                colaboradores.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Respeto -->
-        <article class="rounded-[22px] bg-bg2 border-2 border-black shadow-soft overflow-hidden">
-          <div class="p-4 sm:p-[22px]">
-            <div class="rounded-[18px] bg-bg2 px-5 py-7 sm:px-8 sm:py-10 relative">
-              <div
-                class="inline-flex h-12 w-12 items-center justify-center rounded-[14px]"
-                style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-              >
-                <span style="color: rgb(var(--primary)); font-weight: 800">✿</span>
-              </div>
-
-              <h3 class="mt-6 text-[18px] tracking-tight" style="font-weight: 800">Respeto</h3>
-
-              <p class="mt-4 text-[15px] sm:text-[15.5px] leading-relaxed text-text/60">
-                Aceptamos la diversidad cultural, religiosa y de género. El respeto es fundamental.
+                {{ valor.descripcion }}
               </p>
             </div>
           </div>
@@ -315,21 +231,17 @@
   <section id="financieros" class="bg-bg">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 section-content-pad pb-[48px] md:pb-[72px]">
       <article class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
-        <div class="p-4 sm:p-[22px]">
-          <div
-            class="rounded-[18px] bg-surface px-5 py-6 sm:px-8 sm:py-8 md:px-10 md:py-10 relative"
-          >
+        <div class="p-[22px]">
+          <div class="rounded-[18px] bg-surface px-7 py-7 sm:px-8 sm:py-8 md:px-9 md:py-9 relative">
             <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div class="flex items-center gap-4 min-w-0">
-                <div
-                  class="h-12 w-12 rounded-[14px] flex items-center justify-center shrink-0"
-                  style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)"
-                >
+                <div class="h-12 w-12 rounded-[14px] flex items-center justify-center shrink-0"
+                  style="background: color-mix(in srgb, rgb(var(--primary)) 12%, white)">
                   <span style="color: rgb(var(--primary)); font-weight: 800">📄</span>
                 </div>
 
                 <div class="min-w-0">
-                  <div class="text-[17px] md:text-[18px] leading-tight" style="font-weight: 800">
+                  <div class="text-[17px] md:text-[18px] leading-tight text-text" style="font-weight: 800">
                     Estados Financieros
                   </div>
                   <div class="mt-1 text-[13px] md:text-[14px] text-text/55">
@@ -338,13 +250,9 @@
                 </div>
               </div>
 
-              <a
-                class="inline-flex h-[52px] md:h-[56px] w-full sm:w-[220px] md:w-[170px] rounded-pill shadow-soft transition hover:brightness-[1.03] items-center justify-center"
-                style="background: rgb(var(--primary)); color: white"
-                [href]="financialPdfHref"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="inline-flex h-[52px] md:h-[56px] sm:w-[220px] md:w-[170px] rounded-pill shadow-soft transition hover:brightness-[1.03] items-center justify-center shrink-0"
+                style="background: rgb(var(--primary)); color: white" [href]="financialPdfHref" target="_blank"
+                rel="noopener noreferrer">
                 <span class="inline-flex items-center gap-3">
                   <span aria-hidden="true">↓</span>
                   <span class="font-semibold">Descargar PDF</span>
