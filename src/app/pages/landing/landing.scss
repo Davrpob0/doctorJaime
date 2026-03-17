@@ -1,3 +1,117 @@
+.hero-section {
+  overflow: hidden;
+}
+
+.hero-bg-layer {
+  z-index: 0;
+}
+
+.hero-bg-soft {
+  opacity: 1;
+}
+
+.hero-bg-gradient {
+  opacity: 1;
+}
+
+.hero-inner {
+  padding-top: 3.5rem;
+  padding-bottom: 5.5rem;
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  height: 220px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.14);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.hero-copy {
+  padding-top: 0.5rem;
+}
+
+.hero-actions {
+  padding-bottom: 1.75rem;
+}
+
+.hero-banner__track {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-banner__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.hero-banner__slide--active {
+  opacity: 1;
+}
+
+.hero-banner__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.015) 45%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-banner__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.hero-banner__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.72);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    opacity 180ms ease;
+  opacity: 1;
+}
+
+.hero-banner__dot:hover {
+  transform: scale(1.08);
+}
+
+.hero-banner__dot--active {
+  background: rgb(var(--primary));
+}
+
 .badge-icon {
   height: 56px;
   width: 56px;
@@ -16,16 +130,92 @@
 .badge-smile__arc {
   fill: none;
   stroke: #fff;
-  stroke-width: 6; /* grosor del arco */
-  stroke-linecap: round; /* puntas redondeadas */
+  stroke-width: 6;
+  stroke-linecap: round;
   stroke-linejoin: round;
-
-  /* --- Control del arco --- */
-  /* Circunferencia aprox: 2πr = 87.96 (r=14) */
-  stroke-dasharray: 42 200; /* 1er número = cuánto arco se ve */
-  stroke-dashoffset: 6; /* corre el arco sobre el perímetro */
-
-  /* --- Rotación: ubica la “sonrisa” donde quieras --- */
+  stroke-dasharray: 42 200;
+  stroke-dashoffset: 6;
   transform-origin: 28px 28px;
-  transform: rotate(350deg); /* prueba 190-240 según tu gusto */
+  transform: rotate(350deg);
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    padding-top: 4.5rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .hero-banner {
+    height: 320px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 32px;
+  }
+
+  .hero-copy {
+    padding-top: 0.75rem;
+  }
+
+  .hero-actions {
+    padding-bottom: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    padding-top: 5.5rem;
+    padding-bottom: 7.5rem;
+  }
+
+  .hero-banner {
+    height: 420px;
+    margin-top: 3.5rem;
+    margin-bottom: 3.25rem;
+    border-radius: 36px;
+  }
+
+  .hero-copy {
+    padding-top: 1rem;
+  }
+
+  .hero-actions {
+    padding-bottom: 2.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-inner {
+    padding-top: 2.25rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-banner {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-copy {
+    padding-top: 0.25rem;
+  }
+
+  .hero-actions {
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-banner__dots {
+    bottom: 12px;
+    gap: 7px;
+  }
+
+  .hero-banner__dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-banner {
+    height: 200px;
+    border-radius: 24px;
+  }
 }
