@@ -15,12 +15,37 @@ export class Landing implements OnInit, OnDestroy {
 
   whatsappHref = this.whatsapp.buildUrl();
 
-  heroBanners: string[] = [
-    'images/hero.jpg',
-    'images/hero.jpg',
-    'images/hero.jpg',
-    'images/hero.jpg',
-    'images/hero.jpg',
+  heroBanners = [
+    {
+      desktop: 'images/af-banner-1-desktop.jpg',
+      mobile: 'images/af-banner-1-mobile.jpg',
+      alt: 'Banner 1',
+    },
+    {
+      desktop: 'images/af-banner-2-desktop.jpg',
+      mobile: 'images/af-banner-2-mobile.jpg',
+      alt: 'Banner 2',
+    },
+    {
+      desktop: 'images/af-banner-3-desktop.jpg',
+      mobile: 'images/af-banner-3-mobile.jpg',
+      alt: 'Banner 3',
+    },
+    {
+      desktop: 'images/af-banner-4-desktop.jpg',
+      mobile: 'images/af-banner-4-mobile.jpg',
+      alt: 'Banner 4',
+    },
+    {
+      desktop: 'images/af-banner-5-desktop.jpg',
+      mobile: 'images/af-banner-5-mobile.jpg',
+      alt: 'Banner 5',
+    },
+    {
+      desktop: 'images/af-banner-6-desktop.jpg',
+      mobile: 'images/af-banner-6-mobile.jpg',
+      alt: 'Banner 6',
+    },
   ];
 
   currentBanner = 0;
