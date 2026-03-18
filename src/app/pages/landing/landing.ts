@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WhatsappService } from '../../services/whatsapp.service';
 import { RouterLink } from '@angular/router';
@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class Landing implements OnInit, OnDestroy {
   private readonly whatsapp = inject(WhatsappService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   whatsappHref = this.whatsapp.buildUrl();
 
@@ -65,6 +66,7 @@ export class Landing implements OnInit, OnDestroy {
 
   setCurrentBanner(index: number): void {
     this.currentBanner = index;
+    this.cdr.detectChanges();
     this.restartBannerRotation();
   }
 
@@ -73,6 +75,7 @@ export class Landing implements OnInit, OnDestroy {
 
     this.bannerInterval = setInterval(() => {
       this.currentBanner = (this.currentBanner + 1) % this.heroBanners.length;
+      this.cdr.detectChanges();
     }, 4000);
   }
 
