@@ -1,161 +1,169 @@
 <main class="bg-bg text-text pt-28">
-    <!-- HERO -->
-    <section class="relative isolate overflow-hidden">
-        <!-- Glow suave (atrás) -->
-        <div class="pointer-events-none absolute inset-0 z-0">
-            <div
-                class="absolute -top-32 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl">
-            </div>
-            <div class="absolute -bottom-40 left-0 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl"></div>
-            <div class="absolute -bottom-40 right-0 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl"></div>
+  <!-- HERO -->
+  <section class="relative isolate overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 z-0">
+      <div
+        class="absolute -top-32 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
+      ></div>
+      <div
+        class="absolute -bottom-40 left-0 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl"
+      ></div>
+      <div
+        class="absolute -bottom-40 right-0 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl"
+      ></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-6 pb-24 md:pb-28">
+      <div class="h-20 md:h-24 lg:h-28"></div>
+
+      <div class="text-center max-w-3xl mx-auto flex flex-col items-center">
+        <div
+          class="inline-flex items-center justify-center gap-2 rounded-pill h-[25px] w-[250px] bg-primary/10 px-5 py-3 text-sm font-semibold text-primary"
+        >
+          <img src="icons/stethoscope.png" alt="" class="h-5 w-5" />
+          Diseño de Sonrisa
         </div>
 
-        <div class="relative z-10 mx-auto max-w-6xl px-6 pb-24 md:pb-28">
-            <div class="h-20 md:h-24 lg:h-28"></div>
+        <h1
+          class="mt-8 text-[54px] leading-[1.02] tracking-[-0.02em] font-extrabold text-text md:text-[66px]"
+          style="font-weight: 800"
+        >
+          Transformaciones que<br class="hidden md:block" />
+          Inspiran
+        </h1>
 
-            <div class="text-center max-w-3xl mx-auto flex flex-col items-center">
-                <div
-                    class="inline-flex items-center justify-center gap-2 rounded-pill h-[25px] w-[250px] bg-primary/10 px-5 py-3 text-sm font-semibold text-primary">
-                    <img src="icons/stethoscope.png" alt="" class="h-5 w-5" />
-                    Especialidades Odontológicas
-                </div>
+        <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed text-text/60">
+          Conoce los resultados reales de nuestros pacientes y cómo hemos transformado sus sonrisas.
+        </p>
+      </div>
+    </div>
 
-                <h1 class="mt-8 text-[54px] leading-[1.02] tracking-[-0.02em] font-extrabold text-text md:text-[66px]">
-                    Transformaciones que<br class="hidden md:block" />
-                    Inspiran
-                </h1>
+    <div
+      class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 bg-linear-to-b from-transparent to-bg2"
+    ></div>
+  </section>
 
-                <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed text-text/60">
-                    Conoce los resultados reales de nuestros pacientes y cómo hemos devuelto la confianza a sus
-                    sonrisas.
-                </p>
+  <!-- CONTENIDO -->
+  <section class="bg-bg2">
+    <div class="mx-auto max-w-7xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+      <!-- FILA 1: casos únicos -->
+      <div class="grid gap-10 md:gap-10 md:grid-cols-2 items-start">
+        <article
+          *ngFor="let item of casos | slice: 0 : 2"
+          class="rounded-[26px] bg-surface shadow-soft overflow-hidden ring-2 ring-transparent hover:ring-primary/80 transition transform-gpu hover:-translate-y-[2px]"
+        >
+          <div class="caso-card__single-image bg-black/5">
+            <img
+              [src]="item.image"
+              [alt]="item.titulo"
+              class="caso-card__single-img"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="p-[15px]">
+            <div class="rounded-[20px] bg-surface px-8 py-7">
+              <h3
+                class="text-[24px] md:text-[26px] font-extrabold tracking-tight text-text leading-[1.15] text-center"
+              >
+                {{ item.titulo }}
+              </h3>
             </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="h-10 md:h-12"></div>
+
+      <!-- FILA 2: casos con comparador -->
+      <div class="grid gap-10 md:gap-10 lg:gap-12 md:grid-cols-2 lg:grid-cols-3 items-start">
+        <article
+          *ngFor="let item of casos | slice: 2"
+          class="rounded-[26px] bg-surface shadow-soft overflow-hidden ring-2 ring-transparent hover:ring-primary/80 transition transform-gpu hover:-translate-y-[2px]"
+        >
+          <div class="ba relative overflow-hidden bg-black/5" [style.--pos.%]="item.slider ?? 50">
+            <img class="ba__img" [src]="item.beforeImg" alt="Antes" loading="lazy" />
+            <img
+              class="ba__img ba__img--after"
+              [src]="item.afterImg"
+              alt="Después"
+              loading="lazy"
+            />
+
+            <span class="ba__badge ba__badge--before">ANTES</span>
+            <span class="ba__badge ba__badge--after">DESPUÉS</span>
+
+            <div class="ba__divider"></div>
+            <div class="ba__knob">‖</div>
+
+            <input
+              class="ba__range"
+              type="range"
+              min="0"
+              max="100"
+              [value]="item.slider ?? 50"
+              (input)="onSliderInput(item, $any($event.target).value)"
+              aria-label="Comparar antes y después"
+            />
+          </div>
+
+          <div class="p-[15px]">
+            <div class="rounded-[20px] bg-surface px-8 py-7">
+              <h3
+                class="text-[24px] md:text-[26px] font-extrabold tracking-tight text-text leading-[1.15] text-center"
+              >
+                {{ item.titulo }}
+              </h3>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="h-20 md:h-24"></div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="bg-bg">
+    <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+      <div class="flex flex-col items-center text-center gap-3">
+        <div class="h-12 w-12 rounded-full bg-primary/15 grid place-items-center">
+          <img src="icons/sparkles.png" alt="" class="h-6 w-6" />
         </div>
 
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 bg-linear-to-b from-transparent to-bg2">
+        <h2
+          class="mt-6 text-[42px] md:text-[52px] leading-[1.05] tracking-tight text-text"
+          style="font-weight: 800"
+        >
+          ¿Listo para tu propio cambio?
+        </h2>
+
+        <p class="mt-4 max-w-2xl text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
+          Agenda una valoración y descubre lo que podemos hacer por tu sonrisa.
+        </p>
+
+        <div class="mt-8">
+          <button
+            type="button"
+            class="inline-flex h-[64px] w-[420px] rounded-full px-10 shadow-soft transition hover:brightness-[1.03] items-center justify-center"
+            style="
+              background-image: linear-gradient(
+                90deg,
+                rgb(var(--primary)) 0%,
+                rgb(var(--primary-600)) 100%
+              );
+            "
+            (click)="openWhatsapp()"
+          >
+            <span class="inline-flex items-center gap-3">
+              <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
+              <span class="whitespace-nowrap font-semibold text-white">
+                Hablar con un especialista por WhatsApp
+              </span>
+            </span>
+          </button>
         </div>
-    </section>
-
-    <!-- CONTENIDO -->
-    <section class="bg-bg2">
-        <!-- ✅ Más ancho general para que las cards “ocupen más pantalla” -->
-        <div class="mx-auto max-w-7xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
-            <!-- filtros (NO tocar) -->
-            <div class="flex flex-wrap items-center justify-center gap-4">
-                <button *ngFor="let f of filters" type="button" (click)="setFilter(f.id)"
-                    class="inline-flex h-[44px] w-[150px] items-center justify-center rounded-full px-10 text-[16px] font-extrabold transition border"
-                    [ngClass]="active === f.id
-    ? 'border-transparent shadow-lg'
-    : 'bg-white border-black/10 hover:bg-black/5 shadow-none'" [ngStyle]="active === f.id
-    ? { 'background-color': 'rgb(var(--primary))', color: '#fff' }
-    : { color: 'rgb(var(--text))' }">
-                    {{ f.label }}
-                </button>
-            </div>
-
-            <div class="h-12 md:h-14"></div>
-
-            <!-- ✅ Grid: menos gap, cards más grandes -->
-            <div class="grid gap-10 md:gap-10 lg:gap-12 md:grid-cols-2 lg:grid-cols-3 items-start">
-                <article *ngFor="let item of filtered" class="rounded-[26px] bg-surface shadow-soft overflow-hidden ring-2 ring-transparent
-                 hover:ring-primary/80 transition transform-gpu hover:-translate-y-[2px]">
-                    <!-- Foto a sangre -->
-                    <div class="ba relative overflow-hidden bg-black/5" [style.--pos.%]="item.slider ?? 50">
-                        <img class="ba__img" [src]="item.beforeImg" alt="Antes" loading="lazy" />
-                        <img class="ba__img ba__img--after" [src]="item.afterImg" alt="Después" loading="lazy" />
-
-                        <span class="ba__badge ba__badge--before">ANTES</span>
-                        <span class="ba__badge ba__badge--after">DESPUÉS</span>
-
-                        <div class="ba__divider"></div>
-                        <div class="ba__knob">‖</div>
-
-                        <input class="ba__range" type="range" min="0" max="100" [value]="item.slider ?? 50"
-                            (input)="onSliderInput(item, ($any($event.target).value))"
-                            aria-label="Comparar antes y después" />
-
-                        <span class="ba__chip">{{ item.categoriaLabel }}</span>
-                    </div>
-
-                    <!-- ✅ Contenido más espacioso + texto más grande -->
-                    <div class="p-[15px]">
-                        <div class="rounded-[20px] bg-surface px-8 py-9 ">
-                            <!-- ✅ gap real entre foto y contenido -->
-
-                            <!-- ✅ ritmo vertical consistente -->
-                            <div class="flex flex-col gap-5">
-                                <!-- Título -->
-                                <h3
-                                    class="text-[26px] md:text-[27px] font-extrabold tracking-tight text-text leading-[1.15]">
-                                    {{ item.titulo }}
-                                </h3>
-
-                                <!-- Características -->
-                                <p class="text-[15.5px] md:text-[16px] leading-relaxed text-text/60">
-                                    <span class="font-semibold text-text/75">Características:</span>
-                                    {{ ' ' + item.caracteristicas }}
-                                </p>
-
-                                <!-- Resultado -->
-                                <div class="rounded-[14px] bg-primary/7 border-l-4 px-5 py-4"
-                                    style="border-left-color: rgb(var(--primary));">
-                                    <div class="text-[15px] md:text-[15.5px] leading-relaxed text-text/70">
-                                        <span class="font-semibold text-text">Resultado:</span>
-                                        {{ ' ' + item.resultado }}
-                                    </div>
-                                </div>
-
-                                <!-- Testimonio -->
-                                <div class="pt-8 border-t border-black/10">
-                                    <div class="flex items-start gap-3">
-                                        <span class="quote text-primary">❝❝</span>
-                                        <p class="text-[15px] md:text-[15.5px] italic text-text/55 leading-relaxed">
-                                            {{ item.testimonio }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="h-20 md:h-24"></div>
-        </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="bg-bg">
-        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
-            <div class="flex flex-col items-center text-center gap-3">
-                <div class="h-12 w-12 rounded-full bg-primary/15 grid place-items-center">
-                    <img src="icons/sparkles.png" alt="" class="h-6 w-6" />
-                </div>
-
-                <h2 class="mt-6 text-[42px] md:text-[52px] leading-[1.05] tracking-tight text-text"
-                    style="font-weight: 800;">
-                    ¿Listo para tu propio cambio?
-                </h2>
-
-                <p class="mt-4 max-w-2xl text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
-                    Agenda una valoración y descubre lo que podemos hacer por tu sonrisa.
-                </p>
-
-                <!-- WhatsApp pill -->
-                <div class="mt-8">
-                    <button type="button" class="inline-flex h-[64px] w-[420px] rounded-full px-10 shadow-soft transition hover:brightness-[1.03]
-           items-center justify-center"
-                        style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
-                        (click)="openWhatsapp()">
-                        <span class="inline-flex items-center gap-3">
-                            <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
-                            <span class="whitespace-nowrap font-semibold text-white">
-                                Hablar con un especialista por WhatsApp
-                            </span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </main>

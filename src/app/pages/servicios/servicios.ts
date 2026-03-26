@@ -39,7 +39,7 @@ export class Servicios {
   }
 
   // Ajusta contenido libremente
-  heroCards: ServiceCard[] = [
+  services: ServiceCard[] = [
     {
       id: 'diseno',
       title: 'Diseño de Sonrisa',
@@ -74,47 +74,48 @@ export class Servicios {
         'La implantología coloca implantes de titanio que sustituyen la raíz y se integran al hueso (osteointegración). La rehabilitación oral completa restaura función y estética con prótesis fijas o removibles sobre implantes, ajustando mordida y estabilidad.',
       benefits: ['Función masticatoria', 'Estabilidad', 'Resultados duraderos'],
     },
-  ];
-
-  specialties: ServiceCard[] = [
     {
       id: 'blanqueamiento',
       title: 'Blanqueamiento Dental',
-      icon: 'icons/brillo.png',
+      img: 'images/BlanqueamientoLanding.jpg',
       excerpt:
         'Tratamiento estético para aclarar el tono dental y eliminar manchas superficiales y profundas.',
+      detailsTitle: '¿Cómo se realiza?',
       detailsText:
-        'Se realiza con geles blanqueadores (peróxido) en consultorio (resultados más rápidos) o en casa con férulas personalizadas y supervisión profesional, según sensibilidad y objetivo.',
+        'Se realiza con geles blanqueadores (peróxido) en consultorio, para resultados más rápidos, o en casa con férulas personalizadas y supervisión profesional, según sensibilidad y objetivo.',
       benefits: ['Tono más claro', 'Sonrisa brillante', 'Resultados controlados'],
     },
     {
       id: 'endo',
       title: 'Endodoncia',
-      icon: 'icons/heart.png',
+      img: 'images/EndodonciaLanding.jpg',
       excerpt:
         'Tratamiento de conducto para salvar dientes con pulpa inflamada o infectada y evitar la extracción.',
+      detailsTitle: '¿En qué consiste?',
       detailsText:
-        'Acceso al diente, limpieza y desinfección de conductos, sellado con material biocompatible y restauración final (resina o corona) para proteger la pieza.',
+        'Consiste en acceder al diente, limpiar y desinfectar los conductos, sellarlos con material biocompatible y restaurar la pieza con resina o corona para protegerla.',
       benefits: ['Alivio del dolor', 'Conservación dental', 'Evita extracción'],
     },
     {
       id: 'perio',
       title: 'Periodoncia',
-      icon: 'icons/shield.png',
+      img: 'images/PeriodonciaLanding.jpg',
       excerpt:
-        'Prevención y tratamiento de enfermedades de encías y tejidos de soporte (gingivitis y periodontitis).',
+        'Prevención y tratamiento de enfermedades de encías y tejidos de soporte, como gingivitis y periodontitis.',
+      detailsTitle: '¿Qué trata?',
       detailsText:
-        'Incluye diagnóstico periodontal, higiene profesional profunda, raspado y alisado radicular (curetaje) y, en casos avanzados, procedimientos quirúrgicos o injertos para controlar infección y preservar hueso.',
+        'Incluye diagnóstico periodontal, higiene profesional profunda, raspado y alisado radicular, y en casos avanzados procedimientos quirúrgicos o injertos para controlar la infección y preservar hueso.',
       benefits: ['Encías sanas', 'Previene pérdida dental', 'Control de infección'],
     },
     {
       id: 'cirugia',
       title: 'Cirugía Oral',
-      icon: 'icons/scissors.png',
+      img: 'images/CirugiaOralLanding.jpg',
       excerpt:
         'Procedimientos quirúrgicos en boca y mandíbula realizados por especialista, según valoración clínica.',
+      detailsTitle: '¿Qué incluye?',
       detailsText:
-        'Extracciones complejas, cirugías menores y procedimientos indicados para resolver condiciones que requieren intervención quirúrgica, con enfoque en seguridad y recuperación.',
+        'Extracciones complejas, cirugías menores y otros procedimientos indicados para resolver condiciones que requieren intervención quirúrgica, con enfoque en seguridad y recuperación.',
       benefits: ['Seguridad clínica', 'Recuperación guiada', 'Resolución efectiva'],
     },
   ];

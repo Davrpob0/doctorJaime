@@ -1,240 +1,315 @@
 <main class="bg-bg text-text pt-28">
-    <!-- HERO (bg) -->
-    <section class="relative isolate overflow-hidden bg-bg">
-        <!-- Glow suave (atrás) -->
-        <div class="pointer-events-none absolute inset-0 z-0">
-            <div
-                class="absolute -top-40 left-1/2 h-[520px] w-[920px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl">
+  <!-- HERO (bg) -->
+  <section
+    id="inicio"
+    class="hero-section bg-bg section-fade to-bg2 relative min-h-[85vh] md:min-h-[90vh]"
+  >
+    <!-- Fondo suave -->
+    <div class="absolute inset-0 fade-bg pointer-events-none hero-bg-layer">
+      <div class="absolute inset-0 bg-white/58 hero-bg-soft"></div>
+      <div
+        class="absolute inset-0 bg-linear-to-b from-white/20 via-white/10 to-bg hero-bg-gradient"
+      ></div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="fade-content relative z-10">
+      <div class="relative mx-auto max-w-6xl px-6 min-h-[85vh] md:min-h-[90vh] grid items-center">
+        <div class="hero-inner">
+          <div class="hero-shell">
+            <!-- Banner fijo -->
+            <div class="hero-banner hero-banner--single">
+              <picture>
+                <source media="(max-width: 767px)" srcset="images/sedes-hero-mobile.png" />
+                <img
+                  class="hero-banner__image"
+                  src="images/sedes-hero-desktop.png"
+                  alt="Sedes en Medellín"
+                  loading="eager"
+                />
+              </picture>
+
+              <div class="hero-banner__overlay"></div>
             </div>
-            <div class="absolute -top-32 left-20 h-[420px] w-[420px] rounded-full bg-primary/10 blur-3xl"></div>
-            <div class="absolute -top-32 right-20 h-[420px] w-[420px] rounded-full bg-primary/10 blur-3xl"></div>
+
+            <!-- Texto -->
+            <div class="hero-copy max-w-3xl mx-auto flex flex-col items-center text-center">
+              <h1
+                class="mt-8 text-[64px] md:text-[80px] leading-[1.02] tracking-[-0.02em] font-black text-text"
+                style="font-weight: 800"
+              >
+                Encuéntranos en Medellín
+              </h1>
+
+              <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed text-text/60 max-w-2xl">
+                Contamos con dos sedes estratégicamente ubicadas para tu comodidad y facilidad de
+                acceso.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Contenido -->
-        <div class="relative z-10 mx-auto max-w-6xl px-6 pb-24 md:pb-28">
-            <div class="h-20 md:h-24 lg:h-28"></div>
+      <!-- Transición visual hacia bg2 -->
+      <div
+        class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 bg-linear-to-b from-transparent to-bg2"
+      ></div>
+    </div>
+  </section>
 
-            <div class="text-center max-w-3xl mx-auto flex flex-col items-center">
-                <h1 class="mt-8 text-[64px] md:text-[80px] leading-[1.02] tracking-[-0.02em] font-black text-text">
-                    Encuéntranos en Medellín
-                </h1>
+  <!-- SEDES (cards) (bg2) -->
+  <section class="bg-bg2">
+    <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+      <div class="grid gap-10 md:gap-12 md:grid-cols-2 items-start">
+        <article
+          *ngFor="let s of sedes"
+          class="rounded-[22px] bg-surface shadow-soft overflow-hidden"
+        >
+          <!-- media area -->
+          <div class="relative h-[240px] bg-black/5">
+            <img
+              *ngIf="s.image"
+              [src]="s.image"
+              [alt]="s.titulo"
+              class="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
 
-                <p class="mt-7 text-[18px] md:text-[19px] leading-relaxed text-text/60 max-w-2xl">
-                    Contamos con dos sedes estratégicamente ubicadas para tu comodidad y facilidad de acceso.
-                </p>
-            </div>
-        </div>
-
-        <!-- Transición visual hacia bg2 (siguiente sección) -->
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 bg-linear-to-b from-transparent to-bg2">
-        </div>
-    </section>
-
-    <!-- SEDES (cards) (bg2) -->
-    <section class="bg-bg2">
-        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
-            <div class="grid gap-10 md:gap-12 md:grid-cols-2 items-start">
-                <article *ngFor="let s of sedes" class="rounded-[22px] bg-surface shadow-soft overflow-hidden">
-                    <!-- media area -->
-                    <div class="relative h-[240px] bg-black/5">
-                        <img *ngIf="s.image" [src]="s.image" [alt]="s.titulo"
-                            class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-
-                        <div *ngIf="!s.image" class="absolute inset-0 grid place-items-center">
-                            <img src="icons/building.png" alt="" class="h-30 w-30 opacity-50" />
-                        </div>
-
-                        <!-- chip superior -->
-                        <div class="absolute left-6 top-5">
-                            <span
-                                class="inline-flex justify-center w-[160px] rounded-pill bg-primary px-4 py-2 text-[12px] font-bold text-white shadow-soft">
-                                <img src="icons/location.png" alt="" class="h-4 w-4" />
-                                {{ s.chipTop }}
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- content (patrón Casos de Éxito) -->
-                    <div class="p-[15px]">
-                        <div class="rounded-[20px] bg-surface px-8 py-9">
-                            <h3 class="text-[26px] font-black tracking-tight text-text">
-                                {{ s.titulo }}
-                            </h3>
-
-                            <div class="mt-5 space-y-3 text-[14.5px] text-text/60">
-                                <div class="flex items-start gap-3">
-                                    <img src="icons/location.png" alt="" class="h-4 w-4 mt-[2px]" />
-                                    <span>{{ s.direccion }}</span>
-                                </div>
-
-                                <div class="flex items-start gap-3">
-                                    <img src="icons/building.png" alt="" class="h-4 w-4 mt-[2px]" />
-                                    <span>{{ s.edificio }}</span>
-                                </div>
-                            </div>
-
-                            <div class="mt-7 flex items-center justify-between gap-4">
-                                <a class="inline-flex h-[42px] w-[200px] justify-center rounded-pill border border-black/10 bg-white px-5 text-[14px] font-semibold text-text
-                           items-center gap-3 transition hover:bg-black/5" [href]="s.mapsUrl" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <img src="icons/external-link.png" alt="" class="h-4 w-4" />
-                                    Ver en Google Maps
-                                </a>
-
-                                <a class="inline-flex items-center gap-3 text-[14px] font-semibold text-primary hover:opacity-80 transition"
-                                    [href]="s.phoneHref">
-                                    <img src="icons/phone-call.png" alt="" class="h-4 w-4" />
-                                    Llamar a esta sede
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- MAPA (bg) -->
-    <section class="bg-bg">
-        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-[46px] md:text-[58px] leading-[1.05] tracking-[-0.02em] font-black text-text">
-                    Ubicación en el Mapa
-                </h2>
-                <p class="mt-4 text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
-                    Nuestras dos sedes en Medellín, Colombia
-                </p>
+            <div *ngIf="!s.image" class="absolute inset-0 grid place-items-center">
+              <img src="icons/building.png" alt="" class="h-30 w-30 opacity-50" />
             </div>
 
-            <div class="h-10 md:h-12"></div>
-
-            <div class="rounded-[22px] overflow-hidden shadow-soft bg-black/5">
-                <iframe class="w-full h-[420px] md:h-[460px]" [src]="mapEmbedUrl" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- chip superior -->
+            <div class="absolute left-6 top-5">
+              <span
+                class="inline-flex justify-center w-[160px] rounded-pill bg-primary px-4 py-2 text-[12px] font-bold text-white shadow-soft"
+              >
+                <img src="icons/location.png" alt="" class="h-4 w-4" />
+                {{ s.chipTop }}
+              </span>
             </div>
+          </div>
 
-            <div class="h-10 md:h-12"></div>
+          <!-- content (patrón Casos de Éxito) -->
+          <div class="p-[15px]">
+            <div class="rounded-[20px] bg-surface px-8 py-9">
+              <h3 class="text-[26px] font-black tracking-tight text-text">
+                {{ s.titulo }}
+              </h3>
 
-            <!-- Leyenda -->
-            <div class="flex flex-wrap items-center justify-center gap-8 text-[14px] text-text/55">
-                <div class="inline-flex items-center gap-3">
-                    <span class="h-6 w-6 rounded-full grid place-items-center text-white text-[12px] font-bold"
-                        style="background: rgb(var(--primary));">1</span>
-                    <span>Sede El Poblado – Torre Medical</span>
-                </div>
-                <div class="inline-flex items-center gap-3">
-                    <span class="h-6 w-6 rounded-full grid place-items-center text-white text-[12px] font-bold"
-                        style="background: rgb(var(--primary));">2</span>
-                    <span>Sede Centro – Torre Fundadores</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO GLOBAL (bg2) -->
-    <section class="bg-bg2">
-        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-[46px] md:text-[58px] leading-[1.05] tracking-[-0.02em] font-black text-text">
-                    Información de Contacto Global
-                </h2>
-                <p class="mt-4 text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
-                    Comunícate con nosotros por el canal que prefieras.
-                </p>
-            </div>
-
-            <div class="h-12 md:h-14"></div>
-
-            <div class="grid gap-8 md:grid-cols-4">
-                <!-- WhatsApp -->
-                <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
-                    <div class="p-[14px]">
-                        <div class="rounded-[16px] bg-white px-7 py-8 text-center">
-                            <div
-                                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden">
-                                <img src="icons/whatsapp.png" alt="" class="h-full w-full scale-105" />
-                            </div>
-                            <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">WHATSAPP</div>
-                            <div class="mt-4 font-black text-text">(57) 320 698 48 42</div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Teléfono -->
-                <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
-                    <div class="p-[14px]">
-                        <div class="rounded-[16px] bg-white px-7 py-8 text-center">
-                            <div
-                                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden">
-                                <img src="icons/phone-call.png" alt="" class="h-full w-full" />
-                            </div>
-                            <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">TELÉFONO FIJO</div>
-                            <div class="mt-4 font-black text-text">(4) 322 97 67</div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Email -->
-                <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
-                    <div class="p-[14px]">
-                        <div class="rounded-[16px] bg-white px-7 py-8 text-center">
-                            <div
-                                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden">
-                                <img src="icons/mail.png" alt="" class="h-6 w-6" />
-                            </div>
-                            <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">EMAIL</div>
-                            <div class="mt-4 font-black text-text wrap-break-words">oralestetic.1205@gmail.com</div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Redes -->
-                <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
-                    <div class="p-[14px]">
-                        <div class="rounded-[16px] bg-white px-7 py-8 text-center">
-                            <div
-                                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden">
-                                <img src="icons/instagram.png" alt="" class="h-6 w-6 scale-150" />
-                            </div>
-                            <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">REDES SOCIALES</div>
-                            <div class="mt-4 font-black text-text">@oralestetic_</div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA FINAL (bg) -->
-    <section class="bg-bg">
-        <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
-            <div class="flex flex-col items-center text-center">
-                <div class="h-12 w-12 rounded-full bg-primary/15 grid place-items-center">
-                    <img src="icons/calendar.png" alt="" class="h-6 w-6" />
+              <div class="mt-5 space-y-3 text-[14.5px] text-text/60">
+                <div class="flex items-start gap-3">
+                  <img src="icons/location.png" alt="" class="h-4 w-4 mt-[2px]" />
+                  <span>{{ s.direccion }}</span>
                 </div>
 
-                <h2 class="mt-6 text-[46px] md:text-[58px] leading-[1.05] tracking-[-0.02em] font-black text-text">
-                    ¿Listo para tu cita?
-                </h2>
-
-                <p class="mt-4 max-w-2xl text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
-                    Selecciona tu sede más cercana y agenda ahora.
-                </p>
-
-                <div class="mt-8">
-                    <button type="button" class="inline-flex h-[64px] w-[420px] rounded-full px-10 shadow-soft transition hover:brightness-[1.03]
-                   items-center justify-center"
-                        style="background-image: linear-gradient(90deg, rgb(var(--primary)) 0%, rgb(var(--primary-600)) 100%);"
-                        (click)="openWhatsapp()">
-                        <span class="inline-flex items-center gap-3">
-                            <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
-                            <span class="whitespace-nowrap font-semibold text-white">
-                                Hablar con un especialista por WhatsApp
-                            </span>
-                        </span>
-                    </button>
+                <div class="flex items-start gap-3">
+                  <img src="icons/building.png" alt="" class="h-4 w-4 mt-[2px]" />
+                  <span>{{ s.edificio }}</span>
                 </div>
+              </div>
+
+              <div class="mt-7 flex items-center justify-between gap-4">
+                <a
+                  class="inline-flex h-[42px] w-[200px] justify-center rounded-pill border border-black/10 bg-white px-5 text-[14px] font-semibold text-text items-center gap-3 transition hover:bg-black/5"
+                  [href]="s.mapsUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="icons/external-link.png" alt="" class="h-4 w-4" />
+                  Ver en Google Maps
+                </a>
+
+                <a
+                  class="inline-flex items-center gap-3 text-[14px] font-semibold text-primary hover:opacity-80 transition"
+                  [href]="s.phoneHref"
+                >
+                  <img src="icons/phone-call.png" alt="" class="h-4 w-4" />
+                  Llamar a esta sede
+                </a>
+              </div>
             </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA (bg) -->
+  <section class="bg-bg">
+    <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2
+          class="text-[46px] md:text-[58px] leading-[1.05] tracking-[-0.02em] font-black text-text"
+        >
+          Ubicación en el Mapa
+        </h2>
+        <p class="mt-4 text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
+          Nuestras dos sedes en Medellín, Colombia
+        </p>
+      </div>
+
+      <div class="h-10 md:h-12"></div>
+
+      <div class="rounded-[22px] overflow-hidden shadow-soft bg-black/5">
+        <iframe
+          class="w-full h-[420px] md:h-[460px]"
+          [src]="mapEmbedUrl"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="h-10 md:h-12"></div>
+
+      <!-- Leyenda -->
+      <div class="flex flex-wrap items-center justify-center gap-8 text-[14px] text-text/55">
+        <div class="inline-flex items-center gap-3">
+          <span
+            class="h-6 w-6 rounded-full grid place-items-center text-white text-[12px] font-bold"
+            style="background: rgb(var(--primary))"
+            >1</span
+          >
+          <span>Sede El Poblado – Torre Medical</span>
         </div>
-    </section>
+        <div class="inline-flex items-center gap-3">
+          <span
+            class="h-6 w-6 rounded-full grid place-items-center text-white text-[12px] font-bold"
+            style="background: rgb(var(--primary))"
+            >2</span
+          >
+          <span>Sede Centro – Torre Fundadores</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO GLOBAL (bg2) -->
+  <section class="bg-bg2">
+    <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2
+          class="text-[46px] md:text-[58px] leading-[1.05] tracking-[-0.02em] font-black text-text"
+        >
+          Información de Contacto Global
+        </h2>
+        <p class="mt-4 text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
+          Comunícate con nosotros por el canal que prefieras.
+        </p>
+      </div>
+
+      <div class="h-12 md:h-14"></div>
+
+      <div class="grid gap-8 md:grid-cols-4">
+        <!-- WhatsApp -->
+        <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
+          <div class="p-[14px]">
+            <div class="rounded-[16px] bg-white px-7 py-8 text-center">
+              <div
+                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden"
+              >
+                <img src="icons/whatsapp.png" alt="" class="h-full w-full scale-105" />
+              </div>
+              <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">WHATSAPP</div>
+              <div class="mt-4 font-black text-text">(57) 320 698 48 42</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Teléfono -->
+        <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
+          <div class="p-[14px]">
+            <div class="rounded-[16px] bg-white px-7 py-8 text-center">
+              <div
+                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden"
+              >
+                <img src="icons/phone-call.png" alt="" class="h-full w-full" />
+              </div>
+              <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">
+                TELÉFONO FIJO
+              </div>
+              <div class="mt-4 font-black text-text">(4) 322 97 67</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Email -->
+        <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
+          <div class="p-[14px]">
+            <div class="rounded-[16px] bg-white px-7 py-8 text-center">
+              <div
+                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden"
+              >
+                <img src="icons/mail.png" alt="" class="h-6 w-6" />
+              </div>
+              <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">EMAIL</div>
+              <div class="mt-4 font-black text-text wrap-break-words">
+                oralestetic.1205@gmail.com
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Redes -->
+        <article class="rounded-[18px] bg-white border border-black/10 shadow-soft overflow-hidden">
+          <div class="p-[14px]">
+            <div class="rounded-[16px] bg-white px-7 py-8 text-center">
+              <div
+                class="mx-auto h-12 w-12 rounded-full grid place-items-center bg-primary/15 overflow-hidden"
+              >
+                <img src="icons/instagram.png" alt="" class="h-6 w-6 scale-150" />
+              </div>
+              <div class="mt-6 text-[12px] tracking-[0.18em] font-bold text-text/45">
+                REDES SOCIALES
+              </div>
+              <div class="mt-4 font-black text-text">@oralestetic_</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL (bg) -->
+  <section class="bg-bg">
+    <div class="mx-auto max-w-6xl px-6 section-content-pad pb-[56px] md:pb-[72px]">
+      <div class="flex flex-col items-center text-center">
+        <div class="h-12 w-12 rounded-full bg-primary/15 grid place-items-center">
+          <img src="icons/calendar.png" alt="" class="h-6 w-6" />
+        </div>
+
+        <h2
+          class="mt-6 text-[46px] md:text-[58px] leading-[1.05] tracking-[-0.02em] font-black text-text"
+        >
+          ¿Listo para tu cita?
+        </h2>
+
+        <p class="mt-4 max-w-2xl text-[16.5px] md:text-[18px] leading-relaxed text-text/60">
+          Selecciona tu sede más cercana y agenda ahora.
+        </p>
+
+        <div class="mt-8">
+          <button
+            type="button"
+            class="inline-flex h-[64px] w-[420px] rounded-full px-10 shadow-soft transition hover:brightness-[1.03] items-center justify-center"
+            style="
+              background-image: linear-gradient(
+                90deg,
+                rgb(var(--primary)) 0%,
+                rgb(var(--primary-600)) 100%
+              );
+            "
+            (click)="openWhatsapp()"
+          >
+            <span class="inline-flex items-center gap-3">
+              <img src="icons/whatsapp.png" alt="WhatsApp" class="h-6 w-6 block" />
+              <span class="whitespace-nowrap font-semibold text-white">
+                Hablar con un especialista por WhatsApp
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
